@@ -4,26 +4,25 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize-iso.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/mymaterializecss.css"  media="screen,projection"/>
+
     <!-- Custom Stylesheet-->
     <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-iso.css"  media="screen,projection"/>
     <!-- include summernote css/js
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script
-src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
 
-    <!--
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script>
-  -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
     <!--Let browser know website is optimized for mobile-->
@@ -31,20 +30,54 @@ crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <nav>
-     <div  id="my-nav-wrapper" class="nav-wrapper teal">
-       <a href="#" class=" ideaSpace-logo brand-logo">Idea Space</a>
-       <ul id="nav-mobile" class="right hide-on-med-and-down teal">
-         <li><a id="link-to-AS" href="collapsible.html">Annotation Studios</a></li>
-       </ul>
-     </div>
-   </nav>
+    <div class="materialize-iso">
+      <nav>
+       <div  id="my-nav-wrapper" class="nav-wrapper teal">
+         <a href="#" class=" ideaSpace-logo brand-logo">Idea Space</a>
+         <ul id="nav-mobile" class="right hide-on-med-and-down teal">
+           <li><a id="link-to-AS" href="collapsible.html">Annotation Studios</a></li>
+         </ul>
+       </div>
+      </nav>
+    </div>
    <div class="row">
      <div id="outline-container" class="col m8 grey lighten-4">
 
-      <div id="outline-holder-view-opener">
+      <div class="materialize-iso">
+
+        <div id="outline-holder-view-opener">
          <div id="outline-header-holder" class="row center-align">
-           <h5>Outlines</h5>
+           <div class="col m7 offset-m2">
+             <h5>Outlines</h5>
+           </div>
+           <div class="col m3">
+             <a id="btn-create-new-outline" class="waves-effect waves-light btn outline-headers modal-trigger" href="#modal-create-new-outline">New Outline</a>
+             <div id="modal-create-new-outline" class="modal">
+                <div id="modal-content-create-new-outline" class="modal-content">
+                  <div class="row center">
+                      <h4>Create New Oultine</h4>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <i class="material-icons prefix">textsms</i>
+                      <input type="text" id="input-outline-name">
+                      <label for="input-outline-name">Outline Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <i class="material-icons prefix">textsms</i>
+                      <input type="text" id="input-group-name" class="autocomplete">
+                      <label for="input-group-name">Group Name</label>
+                    </div>
+                  </div>
+                </div>
+                <div id="modal-footer-create-new-outline" class="modal-footer">
+                  <a id="modal-btn-cancel-new-outline" class="modal-close waves-effect waves-light btn">Cancel</a>
+                  <a id="modal-btn-create-new-outline" class="modal-close waves-effect waves-light btn">Create</a>
+                </div>
+              </div>
+           </div>
          </div>
 
          <div id="outline-holder" class="row">
@@ -260,8 +293,11 @@ crossorigin="anonymous"></script>
          </div>
       </div>
 
+      </div>
+
       <div id="open-outline-view-container">
-          <nav>
+          <div class="materialize-iso">
+            <nav>
             <div class="nav-wrapper grey lighten-4">
               <ul id="nav-outline-view" class="hide-on-med-and-down">
                 <li><a class="black-text" href="sass.html">Overview</a></li>
@@ -270,6 +306,7 @@ crossorigin="anonymous"></script>
               </ul>
             </div>
           </nav>
+          </div>
           <div class="row">
             <div class="col m12">
               <div id="paper-outline-container">
@@ -280,10 +317,11 @@ crossorigin="anonymous"></script>
                     <div class="col m12">
                       <div class="card block-card block-card-level-1 z-depth-0">
                         <div class="card-content">
-                          <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>
-<button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>
-<div class="click2edit">click2edit</div>
-
+                          <div class="bootstrap-iso">
+                            <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>
+                            <button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>
+                            <div class="click2edit my-summernote-containers">click2edit</div>
+                          </div>
                           <h5 class="block-header">Introduction</h5>
                           <div id="unique-inner-dropzone-id-2" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
 
@@ -298,7 +336,7 @@ crossorigin="anonymous"></script>
                                     <h6 class="block-header">Section 1</h6>
                                     <div id="unique-inner-dropzone-id-4" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
 
-                                    <p id="unique-block-note-id-2" class="block-note">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                    <p id="unique-block-note-id-2" class="block-note interact-draggable">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
                                     <div id="unique-bottom-dropzone-id-5" class="interact-dropzone"></div><!--this dropzone was created when the block note was created-->
 
                                     <div id="unique-block-id-3" class="interact-draggable">
@@ -371,402 +409,436 @@ crossorigin="anonymous"></script>
 
      </div>
 
-     <div id="idea-space-container-col" class="col m4" style="visibility: visible;">
-       <div id="idea-space-container">
-         <div id="idea-space-header-container">
-           <div id="idea-space-header-row" class="row">
-             <div class="col m8 offset-m2">
-               <div id="choose-idea-space-label" class="center"><h6>Choose Idea Space</h6></div>
+     <div class="materialize-iso">
+
+       <div id="idea-space-container-col" class="col m4" style="visibility: visible;">
+         <div id="idea-space-container">
+           <div id="idea-space-header-container">
+             <div id="idea-space-header-row" class="row">
+               <div class="col m8 offset-m2">
+                 <div id="choose-idea-space-label" class="center"><h6>Choose Idea Space</h6></div>
+               </div>
+               <div class="col m2">
+                 <a id="add-new-idea-space" class="btn-floating btn waves-effect waves-light red right modal-trigger" href="#modal-create-new-idea-space"><i class="material-icons tooltipped" data-position="left">add</i></a>
+               </div>
+               <div id="modal-create-new-idea-space" class="modal">
+                  <div id="modal-content-create-new-outline" class="modal-content">
+                    <div class="row center">
+                        <h4>Create New Idea Space</h4>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col m12">
+                        <i class="material-icons prefix">textsms</i>
+                        <input type="text" id="input-idea-space-name">
+                        <label for="input-idea-space-name">Idea Space Name</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col m12">
+                        <i class="material-icons prefix">textsms</i>
+                        <div id="input-share-idea-space" class="chips chips-autocomplete"></div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div id="modal-footer-create-new-idea-space" class="modal-footer">
+                    <a id="modal-btn-cancel-new-idea-space" class="modal-close waves-effect waves-light btn">Cancel</a>
+                    <a id="modal-btn-create-new-idea-space" class="modal-close waves-effect waves-light btn">Create</a>
+                  </div>
+                </div>
              </div>
-             <div class="col m2">
-               <a id="add-new-idea-space" class="btn-floating btn waves-effect waves-light red right"><i class="material-icons tooltipped" data-position="left">add</i></a>
+             <div class="row">
+               <div class="col m12">
+                 <div class="divider-line-idea-space-names"></div>
+               </div>
              </div>
            </div>
-           <div class="row">
-             <div class="col m12">
+           <div id="idea-space-name-container">
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+             <div class="idea-space-row">
+               <div class="idea-space-name">Name of Idea Space</div>
                <div class="divider-line-idea-space-names"></div>
              </div>
            </div>
          </div>
-         <div id="idea-space-name-container">
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-           <div class="idea-space-row">
-             <div class="idea-space-name">Name of Idea Space</div>
-             <div class="divider-line-idea-space-names"></div>
-           </div>
-         </div>
        </div>
-     </div>
 
-     <div id="idea-space-opener-container-col" class="col m4 white" style="visibility: visible;">
-       <div id="idea-space-opener-container">
-         <div class="row">
-            <div class="col m9 offset-m1">
-              <h6>Name Of Idea Space</h6>
-            </div>
-            <div class="col m2">
-              <div id="btn-return-to-idea-spaces">
-                <i class="material-icons right">arrow_forward</i>
+       <div id="idea-space-opener-container-col" class="col m4 white" style="visibility: visible;">
+         <div id="idea-space-opener-container">
+           <div class="row">
+              <div class="col m9 offset-m1">
+                <h6>Name Of Idea Space</h6>
               </div>
-            </div>
-         </div>
-         <div clas="row">
-           <div class="col m9 offset-m1 center-align">
-             <a id="btn-filter-annotations" class="waves-effect waves-light btn"><i class="material-icons left">filter_list</i>Filter Annotations</a>
+              <div class="col m2">
+                <div id="btn-return-to-idea-spaces">
+                  <i class="material-icons right">arrow_forward</i>
+                </div>
+              </div>
            </div>
-           <div class="col m1 left" style="padding-left:0px;">
-             <a class="btn-floating pulse"><i class="material-icons">sync</i></a>
+           <div clas="row">
+             <div class="col m9 offset-m1 center-align">
+               <a id="btn-filter-annotations" class="waves-effect waves-light btn"><i class="material-icons left">filter_list</i>Filter Annotations</a>
+             </div>
+             <div class="col m1 left" style="padding-left:0px;">
+               <a class="btn-floating pulse"><i class="material-icons">sync</i></a>
+             </div>
            </div>
-         </div>
-           <div id="annotation-filter-options-container" class="row">
-             <div class="col m12">
-               <div id="wrapper-collapsible-filters">
-                 <div id="list-collapsible-filters">
-                   <ul class="collapsible expandable">
-                    <li>
-                      <div class="collapsible-header"><i class="material-icons">format_quote</i>Annotated By</div>
-                      <div class="collapsible-body filter-collapsible-body">
-                        <div class="filter-options-collapsible-body">
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>John Boy</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Sam Smith</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Fredrick Douglas</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>James Brown</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Lebron James</span>
-                          </label>
-                        </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header"><i class="material-icons">class</i>By Class</div>
-                      <div class="collapsible-body filter-collapsible-body">
-                        <div class="filter-options-collapsible-body">
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>John Boy</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Sam Smith</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Fredrick Douglas</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>James Brown</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Lebron James</span>
-                          </label>
-                        </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header"><i class="material-icons">assignment</i>By Document</div>
-                      <div class="collapsible-body filter-collapsible-body">
-                        <div class="filter-options-collapsible-body">
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>John Boy</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Sam Smith</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Fredrick Douglas</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>James Brown</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Lebron James</span>
-                          </label>
-                        </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header"><i class="material-icons">bookmark</i>By Tags</div>
-                      <div class="collapsible-body filter-collapsible-body">
-                        <div class="filter-options-collapsible-body">
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>John Boy</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Sam Smith</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Fredrick Douglas</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>James Brown</span>
-                          </label>
-                        </p>
-                        <p>
-                          <label>
-                            <input type="checkbox" />
-                            <span>Lebron James</span>
-                          </label>
-                        </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header"><i class="material-icons">event</i>By Date Created</div>
-                      <div class="collapsible-body filter-collapsible-body">
-                        <div class="filter-options-collapsible-body">
-                        <div class="row">
-                          <div class="col m6">
-                            <input id="input-start-date" type="text" class="datepicker">
-                            <label for="input-start-date">Start Date</label>
-                          </div>
-                          <div class="col m6">
-                            <input id="input-end-date" type="text" class="datepicker">
-                            <label for="input-end-date">End Date</label>
+             <div id="annotation-filter-options-container" class="row">
+               <div class="col m12">
+                 <div id="wrapper-collapsible-filters">
+                   <div id="list-collapsible-filters">
+                     <ul class="collapsible expandable">
+                      <li>
+                        <div class="collapsible-header"><i class="material-icons">format_quote</i>Annotated By</div>
+                        <div class="collapsible-body filter-collapsible-body">
+                          <div class="filter-options-collapsible-body">
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>John Boy</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Sam Smith</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Fredrick Douglas</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>James Brown</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Lebron James</span>
+                            </label>
+                          </p>
                           </div>
                         </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header"><i class="material-icons">class</i>By Class</div>
+                        <div class="collapsible-body filter-collapsible-body">
+                          <div class="filter-options-collapsible-body">
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>John Boy</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Sam Smith</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Fredrick Douglas</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>James Brown</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Lebron James</span>
+                            </label>
+                          </p>
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    </ul>
+                      </li>
+                      <li>
+                        <div class="collapsible-header"><i class="material-icons">assignment</i>By Document</div>
+                        <div class="collapsible-body filter-collapsible-body">
+                          <div class="filter-options-collapsible-body">
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>John Boy</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Sam Smith</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Fredrick Douglas</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>James Brown</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Lebron James</span>
+                            </label>
+                          </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header"><i class="material-icons">bookmark</i>By Tags</div>
+                        <div class="collapsible-body filter-collapsible-body">
+                          <div class="filter-options-collapsible-body">
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>John Boy</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Sam Smith</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Fredrick Douglas</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>James Brown</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>Lebron James</span>
+                            </label>
+                          </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header"><i class="material-icons">event</i>By Date Created</div>
+                        <div class="collapsible-body filter-collapsible-body">
+                          <div class="filter-options-collapsible-body">
+                          <div class="row">
+                            <div class="col m6">
+                              <input id="input-start-date" type="text" class="datepicker">
+                              <label for="input-start-date">Start Date</label>
+                            </div>
+                            <div class="col m6">
+                              <input id="input-end-date" type="text" class="datepicker">
+                              <label for="input-end-date">End Date</label>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                      </li>
+                      </ul>
+                 </div>
                </div>
              </div>
            </div>
-         </div>
-         <div id="annotation-results-information-section">
-           <div id="annotation-results-container" class="row" style="margin-bottom:0px;">
-             <div class="col m12 center-align grey-text darken-2">
-               <p id="annotation-results-info">Viewing 126 annotations from 3 documents, grouped by tag</p>
-             </div>
-           </div>
-           <div>
-             <div class="row">
-               <div id="pagination-container" class="center-align">
-                   <ul id="annotation-results-ul" class="pagination">
-                      <li class="chevron-left-pagination disabled"><a href="#!"><i class="material-icons filter-pagination-icon">chevron_left</i></a></li>
-                      <li class="active waves-effect"><a id="filter-pagination-1" class="filter-pagination-element" href="#!">1</a></li>
-                      <li class="waves-effect"><a id="filter-pagination-2" class="filter-pagination-element" href="#!">2</a></li>
-                      <li class="waves-effect"><a id="filter-pagination-3" class="filter-pagination-element" href="#!">3</a></li>
-                      <li class="waves-effect"><a id="filter-pagination-4" class="filter-pagination-element" href="#!">4</a></li>
-                      <li class="waves-effect"><a id="filter-pagination-5" class="filter-pagination-element" href="#!">5</a></li>
-                      <li class="chevron-right-pagination waves-effect"><a class="filter-pagination-element" href="#!"><i class="material-icons filter-pagination-icon">chevron_right</i></a></li>
-                   </ul>
+           <div id="annotation-results-information-section">
+             <div id="annotation-results-container" class="row" style="margin-bottom:0px;">
+               <div class="col m12 center-align grey-text darken-2">
+                 <p id="annotation-results-info">Viewing 126 annotations from 3 documents, grouped by tag</p>
                </div>
              </div>
-             <div id="container-for-all-annotation-cards">
-               <div id="unique-block-id-12" class="interact-draggable idea-space-annotation" style="position: absolute;">
+             <div>
+               <div class="row">
+                 <div id="pagination-container" class="center-align">
+                     <ul id="annotation-results-ul" class="pagination">
+                        <li class="chevron-left-pagination disabled"><a href="#!"><i class="material-icons filter-pagination-icon">chevron_left</i></a></li>
+                        <li class="active waves-effect"><a id="filter-pagination-1" class="filter-pagination-element" href="#!">1</a></li>
+                        <li class="waves-effect"><a id="filter-pagination-2" class="filter-pagination-element" href="#!">2</a></li>
+                        <li class="waves-effect"><a id="filter-pagination-3" class="filter-pagination-element" href="#!">3</a></li>
+                        <li class="waves-effect"><a id="filter-pagination-4" class="filter-pagination-element" href="#!">4</a></li>
+                        <li class="waves-effect"><a id="filter-pagination-5" class="filter-pagination-element" href="#!">5</a></li>
+                        <li class="chevron-right-pagination waves-effect"><a class="filter-pagination-element" href="#!"><i class="material-icons filter-pagination-icon">chevron_right</i></a></li>
+                     </ul>
+                 </div>
+               </div>
+               <div id="container-for-all-annotation-cards">
+                 <div id="unique-block-id-12" class="interact-draggable idea-space-annotation" style="position: absolute;">
+                   <div class="row annotation-card-container">
+                   <div class="col m12">
+                     <div class="card white hoverable">
+                      <div class="card-content">
+                        <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively."</p>
+                        <div class="text-annotation-dividing-line"></div>
+                        <p class="card-annotation">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                        <div class="row annotation-meta-data-container">
+                          <div class="col m12">
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">person_outline</i>Username</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document Name</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">access_time</i>Date made</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags meta-data-chip-tag-color-1">
+                                <div class="annotation-meta-data annotation-meta-data-tag"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 2</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 3</div>
+                              </div>
+                              <i class="material-icons right">more_vert</i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                </div>
+                <div  id="unique-block-id-13" class="interact-draggable idea-space-annotation">
                  <div class="row annotation-card-container">
-                 <div class="col m12">
-                   <div class="card white hoverable">
-                    <div class="card-content">
-                      <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively."</p>
-                      <div class="text-annotation-dividing-line"></div>
-                      <p class="card-annotation">I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively.</p>
-                      <div class="row annotation-meta-data-container">
-                        <div class="col m12">
-                            <div class="chip meta-data-chips">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">person_outline</i>Username</div>
-                            </div>
-                            <div class="chip meta-data-chips">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document Name</div>
-                            </div>
-                            <div class="chip meta-data-chips">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name</div>
-                            </div>
-                            <div class="chip meta-data-chips">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">access_time</i>Date made</div>
-                            </div>
-                            <div class="chip meta-data-chips meta-data-chip-tags meta-data-chip-tag-color-1">
-                              <div class="annotation-meta-data annotation-meta-data-tag"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1</div>
-                            </div>
-                            <div class="chip meta-data-chips meta-data-chip-tags">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 2</div>
-                            </div>
-                            <div class="chip meta-data-chips meta-data-chip-tags">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 3</div>
-                            </div>
-                            <i class="material-icons right">more_vert</i>
+                   <div class="col m12">
+                     <div class="card white hoverable">
+                      <div class="card-content">
+                        <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively."</p>
+                        <div class="text-annotation-dividing-line"></div>
+                        <p class="card-annotation">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                        <div class="row annotation-meta-data-container">
+                          <div class="col m12">
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">person_outline</i>Username</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document Name</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">access_time</i>Date made</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags meta-data-chip-tag-color-1">
+                                <div class="annotation-meta-data annotation-meta-data-tag"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 2</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 3</div>
+                              </div>
+                              <i class="material-icons right">more_vert</i>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                 </div>
                 </div>
                </div>
-              </div>
-              <div  id="unique-block-id-13" class="interact-draggable idea-space-annotation">
-               <div class="row annotation-card-container">
-                 <div class="col m12">
-                   <div class="card white hoverable">
-                    <div class="card-content">
-                      <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively."</p>
-                      <div class="text-annotation-dividing-line"></div>
-                      <p class="card-annotation">I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively.</p>
-                      <div class="row annotation-meta-data-container">
-                        <div class="col m12">
-                            <div class="chip meta-data-chips">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">person_outline</i>Username</div>
-                            </div>
-                            <div class="chip meta-data-chips">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document Name</div>
-                            </div>
-                            <div class="chip meta-data-chips">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name</div>
-                            </div>
-                            <div class="chip meta-data-chips">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">access_time</i>Date made</div>
-                            </div>
-                            <div class="chip meta-data-chips meta-data-chip-tags meta-data-chip-tag-color-1">
-                              <div class="annotation-meta-data annotation-meta-data-tag"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1</div>
-                            </div>
-                            <div class="chip meta-data-chips meta-data-chip-tags">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 2</div>
-                            </div>
-                            <div class="chip meta-data-chips meta-data-chip-tags">
-                              <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 3</div>
-                            </div>
-                            <i class="material-icons right">more_vert</i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-               </div>
-              </div>
              </div>
            </div>
          </div>
        </div>
+
      </div>
 
    </div>
-   <div id="footer-container" class="z-depth-1">
-     <footer id="my-page-footer" class="page-footer white">
-      <div id="my-footer-copyright" class="footer-copyright white black-text">
-        <div class="container">
-        © 2014 Copyright Text
-        <a class="black-text right" href="#!">MIT Digital Humanities Lab</a>
+
+   <div class="materialize-iso">
+
+     <div id="footer-container" class="z-depth-1">
+       <footer id="my-page-footer" class="page-footer white">
+        <div id="my-footer-copyright" class="footer-copyright white black-text">
+          <div class="container">
+          © 2014 Copyright Text
+          <a class="black-text right" href="#!">MIT Digital Humanities Lab</a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
+
   </div>
     <!-- Custtom Js Script -->
     <script type="text/javascript" src="js/GlobalVars.js"></script>

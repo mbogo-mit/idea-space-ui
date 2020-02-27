@@ -3,6 +3,30 @@ $( document ).ready(function() {
   //summernote
   //$(".summernote").summernote();
   //JS that uses Materialize Library
+  $('.chips').chips();
+  $('.chips-autocomplete').chips({
+    placeholder: 'Group Name',
+    secondaryPlaceholder: '+Group',
+  });
+  $('.chips-autocomplete').chips({
+    autocompleteOptions: {
+      data: {
+        'Apple': null,
+        'Microsoft': null,
+        'Google': null
+      },
+      limit: Infinity,
+      minLength: 1
+    }
+  });
+  $('#input-group-name').autocomplete({
+    data: {
+      "Group 1": null,
+      "Another Group Name": null,
+      "Special Group Name": 'https://placehold.it/250x250'
+    },
+  });
+  $('.modal').modal();
   $('.collapsible').collapsible();
   $('.datepicker').datepicker();
   $('.tooltipped').tooltip({

@@ -85,6 +85,10 @@ body {
   margin-top: 10px;
 }
 
+#btn-create-new-outline {
+  margin-top: 20px;
+}
+
 .idea-space-name {
   padding-top:20px;
   padding-bottom: 20px;
@@ -335,6 +339,8 @@ body {
 
 .interact-draggable {
   position: relative !important;
+  overflow-x: visible;
+  overflow-y: visible;
 }
 
 .interact-dropzone {
@@ -365,4 +371,20 @@ body {
 
 .material-tooltip {
   background-color: #616161 !important;
+}
+
+.my-summernote-containers {
+  height: 6px !important;
+}
+
+#modal-content-create-new-outline {
+  padding-bottom: 0px !important;
+}
+
+#modal-footer-create-new-outline {
+  margin-top: -30px;
+}
+
+#modal-footer-create-new-idea-space {
+  margin-top: -30px;
 }

@@ -1,3 +1,4 @@
+
 var edit = function() {
   $('.click2edit').summernote({focus: true});
 };
@@ -5,6 +6,7 @@ var edit = function() {
 var save = function() {
   var markup = $('.click2edit').summernote({focus: false});
   $('.click2edit').summernote('destroy');
+  //$(".click2edit").modal("hide");
 };
 
 var ID = function () {
