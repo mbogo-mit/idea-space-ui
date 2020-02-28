@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/materialNote.css" rel="stylesheet">
+    <!--<link href="css/codeMirror/codemirror.css" rel="stylesheet">-->
+    <!--<link href="css/codeMirror/monokai.css" rel="stylesheet">-->
+    <!--<link href="css/main.css" rel="stylesheet">-->
+
+    <!--<script type="text/javascript" src="lib/jquery-2.1.4.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!--<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>-->
+    <script type="text/javascript" src="lib/materialize.js"></script>
+    <script type="text/javascript" src="js/ckMaterializeOverrides.js"></script>
+
+    <script type="text/javascript" src="lib/codeMirror/codemirror.js"></script>
+    <script type="text/javascript" src="lib/codeMirror/xml.js"></script>
+    <script type="text/javascript" src="js/materialNote.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <!--Import materialize.css
     <link type="text/css" rel="stylesheet" href="css/materialize-iso.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/mymaterializecss.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/mymaterializecss.css"  media="screen,projection"/>-->
 
     <!-- Custom Stylesheet-->
     <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-iso.css"  media="screen,projection"/>
+    <!--
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-iso.css"  media="screen,projection"/>-->
     <!-- include summernote css/js
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
 
 
+    <!--
     <script src="js/bootstrap.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script>
-    <script src="materialize/js/materialize.js"></script>
+    <script src="materialize/js/materialize.js"></script>-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
@@ -30,22 +47,38 @@
   </head>
 
   <body>
-    <div class="materialize-iso">
-      <nav>
-       <div  id="my-nav-wrapper" class="nav-wrapper teal">
-         <a href="#" class=" ideaSpace-logo brand-logo">Idea Space</a>
-         <ul id="nav-mobile" class="right hide-on-med-and-down teal">
-           <li><a id="link-to-AS" href="collapsible.html">Annotation Studios</a></li>
-         </ul>
-       </div>
-      </nav>
-    </div>
+    <!-- navbar -->
+    <nav>
+     <div  id="my-nav-wrapper" class="nav-wrapper teal">
+       <a href="#" class=" ideaSpace-logo brand-logo">Idea Space</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down teal">
+         <li><a id="link-to-AS" href="collapsible.html">Annotation Studios</a></li>
+       </ul>
+     </div>
+    </nav>
+    <!-- end of navbar -->
+
+   <!-- this container holds everything the user sees except the footer
+        the view is split up into a left and right view where left holds everything
+        concerning the outlines and right holds everything concerning the idea spaces
+        Each view has two states:
+          for the left side (outlines) - state 1 = outlines from different classes and template outlines
+                                       - state 2 = the view that shows the outlines open and you can actually edit and save content
+          for the right side (idea spaces) - state 1 = choosing and creating new idea spaces
+                                           - state 2 = going inside existing idea spaces, displaying and using the annotations inside the ideaspace
+    -->
+
    <div class="row">
+
+
+     <!-- #outline-container
+          -holds everything on the right left side of the page
+            dealing with the outlines from different classes to opening the actual outline
+          -holds both states 1 and 2
+    -->
      <div id="outline-container" class="col m8 grey lighten-4">
 
-      <div class="materialize-iso">
-
-        <div id="outline-holder-view-opener">
+      <div id="outline-holder-view-opener">
          <div id="outline-header-holder" class="row center-align">
            <div class="col m7 offset-m2">
              <h5>Outlines</h5>
@@ -293,7 +326,7 @@
          </div>
       </div>
 
-      </div>
+
 
       <div id="open-outline-view-container">
           <div class="materialize-iso">
@@ -317,15 +350,14 @@
                     <div class="col m12">
                       <div class="card block-card block-card-level-1 z-depth-0">
                         <div class="card-content">
-                          <div class="bootstrap-iso">
-                            <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>
-                            <button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>
-                            <div class="click2edit my-summernote-containers">click2edit</div>
-                          </div>
+                            <div class="my-materialnote-containers">click2edit</div>
+                            <button class="btn btn-primary save-materialnote" type="button">Save 2</button>
                           <h5 class="block-header">Introduction</h5>
                           <div id="unique-inner-dropzone-id-2" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
 
-                          <p id="unique-block-note-id-1" class="block-note">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                          <p id="unique-block-note-id-1" class="block-note my-materialnote-containers">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                          <button class="btn btn-primary save-materialnote" type="button">Save 2</button>
+
                           <div id="unique-bottom-dropzone-id-3" class="interact-dropzone"></div><!--this dropzone was created when the block note was created-->
 
                           <div id="unique-block-id-2" class="interact-draggable">
@@ -336,7 +368,9 @@
                                     <h6 class="block-header">Section 1</h6>
                                     <div id="unique-inner-dropzone-id-4" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
 
-                                    <p id="unique-block-note-id-2" class="block-note interact-draggable">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                    <p id="unique-block-note-id-2" class="block-note interact-draggable my-materialnote-containers">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                    <button class="btn btn-primary save-materialnote" type="button">Save 2</button>
+
                                     <div id="unique-bottom-dropzone-id-5" class="interact-dropzone"></div><!--this dropzone was created when the block note was created-->
 
                                     <div id="unique-block-id-3" class="interact-draggable">
@@ -409,334 +443,399 @@
 
      </div>
 
-     <div class="materialize-iso">
 
-       <div id="idea-space-container-col" class="col m4" style="visibility: visible;">
-         <div id="idea-space-container">
-           <div id="idea-space-header-container">
-             <div id="idea-space-header-row" class="row">
-               <div class="col m8 offset-m2">
-                 <div id="choose-idea-space-label" class="center"><h6>Choose Idea Space</h6></div>
-               </div>
-               <div class="col m2">
-                 <a id="add-new-idea-space" class="btn-floating btn waves-effect waves-light red right modal-trigger" href="#modal-create-new-idea-space"><i class="material-icons tooltipped" data-position="left">add</i></a>
-               </div>
-               <div id="modal-create-new-idea-space" class="modal">
-                  <div id="modal-content-create-new-outline" class="modal-content">
-                    <div class="row center">
-                        <h4>Create New Idea Space</h4>
-                    </div>
-                    <div class="row">
-                      <div class="input-field col m12">
-                        <i class="material-icons prefix">textsms</i>
-                        <input type="text" id="input-idea-space-name">
-                        <label for="input-idea-space-name">Idea Space Name</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="input-field col m12">
-                        <i class="material-icons prefix">textsms</i>
-                        <div id="input-share-idea-space" class="chips chips-autocomplete"></div>
+     <!-- #idea-space-container-col
+          - holds everyting to do with state 1 of idea spaces
+          - default is visible
 
-                      </div>
+     -->
+     <div id="idea-space-container-col" class="col m4" style="visibility: visible;">
+       <div id="idea-space-container">
+
+         <div id="idea-space-header-container">
+           <div id="idea-space-header-row" class="row">
+             <div class="col m8 offset-m2">
+               <div id="choose-idea-space-label" class="center"><h6>Choose Idea Space</h6></div>
+             </div>
+             <div class="col m2">
+               <!-- #add-new-idea-space
+                    - button that opens up a modal and allows people to create new idea space
+               -->
+               <a id="add-new-idea-space" class="btn-floating btn waves-effect waves-light red right modal-trigger" href="#modal-create-new-idea-space"><i class="material-icons tooltipped" data-position="left">add</i></a>
+             </div>
+             <!-- #modal-create-new-idea-space
+                  - pop up that allows people to make a new idea space
+                  - it must share the idea space with the specified groups and people (#input-share-idea-space)
+             -->
+             <div id="modal-create-new-idea-space" class="modal">
+                <div id="modal-content-create-new-outline" class="modal-content">
+                  <div class="row center">
+                      <h4>Create New Idea Space</h4>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <i class="material-icons prefix">textsms</i>
+                      <input type="text" id="input-idea-space-name">
+                      <label for="input-idea-space-name">Idea Space Name</label>
                     </div>
                   </div>
-                  <div id="modal-footer-create-new-idea-space" class="modal-footer">
-                    <a id="modal-btn-cancel-new-idea-space" class="modal-close waves-effect waves-light btn">Cancel</a>
-                    <a id="modal-btn-create-new-idea-space" class="modal-close waves-effect waves-light btn">Create</a>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <i class="material-icons prefix">textsms</i>
+                      <div id="input-share-idea-space" class="chips chips-autocomplete"></div>
+
+                    </div>
                   </div>
                 </div>
-             </div>
-             <div class="row">
-               <div class="col m12">
-                 <div class="divider-line-idea-space-names"></div>
-               </div>
-             </div>
+                <div id="modal-footer-create-new-idea-space" class="modal-footer">
+                  <a id="modal-btn-cancel-new-idea-space" class="modal-close waves-effect waves-light btn">Cancel</a>
+                  <a id="modal-btn-create-new-idea-space" class="modal-close waves-effect waves-light btn">Create</a>
+                </div>
+              </div>
            </div>
-           <div id="idea-space-name-container">
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-             <div class="idea-space-row">
-               <div class="idea-space-name">Name of Idea Space</div>
-               <div class="divider-line-idea-space-names"></div>
-             </div>
-           </div>
-         </div>
-       </div>
-
-       <div id="idea-space-opener-container-col" class="col m4 white" style="visibility: visible;">
-         <div id="idea-space-opener-container">
            <div class="row">
-              <div class="col m9 offset-m1">
-                <h6>Name Of Idea Space</h6>
-              </div>
-              <div class="col m2">
-                <div id="btn-return-to-idea-spaces">
-                  <i class="material-icons right">arrow_forward</i>
-                </div>
-              </div>
-           </div>
-           <div clas="row">
-             <div class="col m9 offset-m1 center-align">
-               <a id="btn-filter-annotations" class="waves-effect waves-light btn"><i class="material-icons left">filter_list</i>Filter Annotations</a>
-             </div>
-             <div class="col m1 left" style="padding-left:0px;">
-               <a class="btn-floating pulse"><i class="material-icons">sync</i></a>
+             <div class="col m12">
+               <div class="divider-line-idea-space-names"></div>
              </div>
            </div>
-             <div id="annotation-filter-options-container" class="row">
-               <div class="col m12">
-                 <div id="wrapper-collapsible-filters">
-                   <div id="list-collapsible-filters">
-                     <ul class="collapsible expandable">
-                      <li>
-                        <div class="collapsible-header"><i class="material-icons">format_quote</i>Annotated By</div>
-                        <div class="collapsible-body filter-collapsible-body">
-                          <div class="filter-options-collapsible-body">
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>John Boy</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Sam Smith</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Fredrick Douglas</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>James Brown</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Lebron James</span>
-                            </label>
-                          </p>
+         </div>
+         <div id="idea-space-name-container">
+
+           <!-- .idea-space-row
+                - this block of code must be repeated multiple times based on what the query from the data base returns
+                - it creates multip idea-space-row blocks of code and fills them up with the appropriate meta-data
+                Meta Data:
+                  - #unique-idea-space-id: id that allows the program to know that
+                    when this block of code is clicked which Idea space to pull up based on this specific id
+           -->
+           <div class="idea-space-row">
+             <div id="unique-idea-space-id" class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <!-- end of block (.idea-space-row ) -->
+
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+     <!-- #idea-space-opener-container-col
+          - holds everyting to do with state 2 of idea spaces
+          - default is not visible and slides in when a user chooses an idea space
+
+          Data:
+            Name of Idea Space: grap from database based on the button that was clicked to open up this idea space
+            #wrapper-collapsible-filters: fill the filter with all appropriate data (example: the names of everyone that contributed to idea space so you can filter by them)
+     -->
+     <div id="idea-space-opener-container-col" class="col m4 white" style="visibility: visible;">
+       <div id="idea-space-opener-container">
+         <div class="row">
+            <div class="col m9 offset-m1">
+              <!--"Name of Idea Space" dynamically filled-->
+              <h6>Name Of Idea Space</h6>
+            </div>
+            <div class="col m2">
+              <div id="btn-return-to-idea-spaces">
+                <i class="material-icons right">arrow_forward</i>
+              </div>
+            </div>
+         </div>
+         <div clas="row">
+           <div class="col m9 offset-m1 center-align">
+             <a id="btn-filter-annotations" class="waves-effect waves-light btn"><i class="material-icons left">filter_list</i>Filter Annotations</a>
+           </div>
+           <div class="col m1 left" style="padding-left:0px;">
+             <!-- #btn-update-filters
+                  - when clicked it will look at the options inside of filters and creates a query that queries the database
+                    and updates annotaitons appropriately
+             -->
+             <a id="btn-update-filters" class="btn-floating pulse"><i class="material-icons">sync</i></a>
+           </div>
+         </div>
+           <div id="annotation-filter-options-container" class="row">
+             <div class="col m12">
+               <!-- #wrapper-collapsible-filters
+                    dynamically filled by query to databased to get :
+                      - (Annotated By): everyone who contributed to idea space
+                      - (By Class): get all classes that annotations come from
+                      - (By Document): get all documents that annotations come from
+                      - (By Tags): get all tags that annotations come from
+                      - (By Date Created): no action needed
+
+               -->
+               <div id="wrapper-collapsible-filters">
+                 <div id="list-collapsible-filters">
+                   <ul class="collapsible expandable">
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">format_quote</i>Annotated By</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>John Boy</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Sam Smith</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Fredrick Douglas</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>James Brown</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Lebron James</span>
+                          </label>
+                        </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">class</i>By Class</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>John Boy</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Sam Smith</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Fredrick Douglas</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>James Brown</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Lebron James</span>
+                          </label>
+                        </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">assignment</i>By Document</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>John Boy</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Sam Smith</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Fredrick Douglas</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>James Brown</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Lebron James</span>
+                          </label>
+                        </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">bookmark</i>By Tags</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>John Boy</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Sam Smith</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Fredrick Douglas</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>James Brown</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Lebron James</span>
+                          </label>
+                        </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">event</i>By Date Created</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <div class="row">
+                          <div class="col m6">
+                            <input id="input-start-date" type="text" class="datepicker">
+                            <label for="input-start-date">Start Date</label>
+                          </div>
+                          <div class="col m6">
+                            <input id="input-end-date" type="text" class="datepicker">
+                            <label for="input-end-date">End Date</label>
                           </div>
                         </div>
-                      </li>
-                      <li>
-                        <div class="collapsible-header"><i class="material-icons">class</i>By Class</div>
-                        <div class="collapsible-body filter-collapsible-body">
-                          <div class="filter-options-collapsible-body">
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>John Boy</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Sam Smith</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Fredrick Douglas</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>James Brown</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Lebron James</span>
-                            </label>
-                          </p>
-                          </div>
                         </div>
-                      </li>
-                      <li>
-                        <div class="collapsible-header"><i class="material-icons">assignment</i>By Document</div>
-                        <div class="collapsible-body filter-collapsible-body">
-                          <div class="filter-options-collapsible-body">
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>John Boy</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Sam Smith</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Fredrick Douglas</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>James Brown</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Lebron James</span>
-                            </label>
-                          </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="collapsible-header"><i class="material-icons">bookmark</i>By Tags</div>
-                        <div class="collapsible-body filter-collapsible-body">
-                          <div class="filter-options-collapsible-body">
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>John Boy</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Sam Smith</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Fredrick Douglas</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>James Brown</span>
-                            </label>
-                          </p>
-                          <p>
-                            <label>
-                              <input type="checkbox" />
-                              <span>Lebron James</span>
-                            </label>
-                          </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="collapsible-header"><i class="material-icons">event</i>By Date Created</div>
-                        <div class="collapsible-body filter-collapsible-body">
-                          <div class="filter-options-collapsible-body">
-                          <div class="row">
-                            <div class="col m6">
-                              <input id="input-start-date" type="text" class="datepicker">
-                              <label for="input-start-date">Start Date</label>
-                            </div>
-                            <div class="col m6">
-                              <input id="input-end-date" type="text" class="datepicker">
-                              <label for="input-end-date">End Date</label>
-                            </div>
-                          </div>
-                          </div>
-                        </div>
-                      </li>
-                      </ul>
-                 </div>
+                      </div>
+                    </li>
+                    </ul>
                </div>
              </div>
            </div>
-           <div id="annotation-results-information-section">
-             <div id="annotation-results-container" class="row" style="margin-bottom:0px;">
-               <div class="col m12 center-align grey-text darken-2">
-                 <p id="annotation-results-info">Viewing 126 annotations from 3 documents, grouped by tag</p>
+         </div>
+         <div id="annotation-results-information-section">
+           <div id="annotation-results-container" class="row">
+             <div class="col m12 center-align grey-text darken-2">
+
+               <!-- #annotation-results-info
+                    - dynamically created by looking at how many annotations fit the specifications of the query from the database
+               -->
+               <p id="annotation-results-info">Viewing 126 annotations from 3 documents, grouped by tag</p>
+
+             </div>
+           </div>
+
+           <!-- #pagination-container
+                - holds pagination tools to go through query once all the data is gathered pagination will happen on client side
+           -->
+           <div id="pagination-container">
+             <div class="row">
+               <div class="col m12 center-align">
+                 <ul id="annotation-results-ul" class="pagination">
+                    <li class="chevron-left-pagination disabled"><a href="#!"><i class="material-icons filter-pagination-icon">chevron_left</i></a></li>
+                    <li class="active waves-effect"><a id="filter-pagination-1" class="filter-pagination-element" href="#!">1</a></li>
+                    <li class="waves-effect"><a id="filter-pagination-2" class="filter-pagination-element" href="#!">2</a></li>
+                    <li class="waves-effect"><a id="filter-pagination-3" class="filter-pagination-element" href="#!">3</a></li>
+                    <li class="waves-effect"><a id="filter-pagination-4" class="filter-pagination-element" href="#!">4</a></li>
+                    <li class="waves-effect"><a id="filter-pagination-5" class="filter-pagination-element" href="#!">5</a></li>
+                    <li class="chevron-right-pagination waves-effect"><a class="filter-pagination-element" href="#!"><i class="material-icons filter-pagination-icon">chevron_right</i></a></li>
+                 </ul>
                </div>
              </div>
-             <div>
+           </div>
+           <div id="container-for-all-annotation-cards" style="margin-top: 30px !important;">
+
+             <!-- .annotation-card-container
+                  - this block of code will be iterated thorugh multiple times to create multiple annotation cards and each card will dynamically be filled with data
+                  Data:
+                    (All database calls are from annotation store but once they move onto outline it comes from mongodb)
+                    #unique-block-id-34: this is the unique block id for this annotation and must be generated from database call
+                    .card-annotated-text: the text that was being annotated dynamically generated from database call
+                    .card-annotation: annotation
+                    .meta-data-chips: holds information about the annotation: username, document name, group name, date made, tags
+              -->
+             <div id="unique-block-id-34" class="annotation-card-container interact-draggable">
                <div class="row">
-                 <div id="pagination-container" class="center-align">
-                     <ul id="annotation-results-ul" class="pagination">
-                        <li class="chevron-left-pagination disabled"><a href="#!"><i class="material-icons filter-pagination-icon">chevron_left</i></a></li>
-                        <li class="active waves-effect"><a id="filter-pagination-1" class="filter-pagination-element" href="#!">1</a></li>
-                        <li class="waves-effect"><a id="filter-pagination-2" class="filter-pagination-element" href="#!">2</a></li>
-                        <li class="waves-effect"><a id="filter-pagination-3" class="filter-pagination-element" href="#!">3</a></li>
-                        <li class="waves-effect"><a id="filter-pagination-4" class="filter-pagination-element" href="#!">4</a></li>
-                        <li class="waves-effect"><a id="filter-pagination-5" class="filter-pagination-element" href="#!">5</a></li>
-                        <li class="chevron-right-pagination waves-effect"><a class="filter-pagination-element" href="#!"><i class="material-icons filter-pagination-icon">chevron_right</i></a></li>
-                     </ul>
-                 </div>
-               </div>
-               <div id="container-for-all-annotation-cards">
-                 <div id="unique-block-id-12" class="interact-draggable idea-space-annotation" style="position: absolute;">
-                   <div class="row annotation-card-container">
-                   <div class="col m12">
+                 <div class="col m12">
                      <div class="card white hoverable">
                       <div class="card-content">
                         <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
@@ -773,73 +872,30 @@
                       </div>
                     </div>
                   </div>
-                 </div>
-                </div>
-                <div  id="unique-block-id-13" class="interact-draggable idea-space-annotation">
-                 <div class="row annotation-card-container">
-                   <div class="col m12">
-                     <div class="card white hoverable">
-                      <div class="card-content">
-                        <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively."</p>
-                        <div class="text-annotation-dividing-line"></div>
-                        <p class="card-annotation">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                        <div class="row annotation-meta-data-container">
-                          <div class="col m12">
-                              <div class="chip meta-data-chips">
-                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">person_outline</i>Username</div>
-                              </div>
-                              <div class="chip meta-data-chips">
-                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document Name</div>
-                              </div>
-                              <div class="chip meta-data-chips">
-                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name</div>
-                              </div>
-                              <div class="chip meta-data-chips">
-                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">access_time</i>Date made</div>
-                              </div>
-                              <div class="chip meta-data-chips meta-data-chip-tags meta-data-chip-tag-color-1">
-                                <div class="annotation-meta-data annotation-meta-data-tag"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1</div>
-                              </div>
-                              <div class="chip meta-data-chips meta-data-chip-tags">
-                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 2</div>
-                              </div>
-                              <div class="chip meta-data-chips meta-data-chip-tags">
-                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 3</div>
-                              </div>
-                              <i class="material-icons right">more_vert</i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                 </div>
-                </div>
                </div>
              </div>
            </div>
          </div>
        </div>
-
      </div>
+
 
    </div>
 
-   <div class="materialize-iso">
-
-     <div id="footer-container" class="z-depth-1">
-       <footer id="my-page-footer" class="page-footer white">
-        <div id="my-footer-copyright" class="footer-copyright white black-text">
-          <div class="container">
-          © 2014 Copyright Text
-          <a class="black-text right" href="#!">MIT Digital Humanities Lab</a>
-          </div>
+   <!-- footer which more information could be added too -->
+   <div id="footer-container" class="z-depth-1">
+     <footer id="my-page-footer" class="page-footer white">
+      <div id="my-footer-copyright" class="footer-copyright white black-text">
+        <div class="container">
+        © 2014 Copyright Text
+        <a class="black-text right" href="#!">MIT Digital Humanities Lab</a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
+   </div>
+   <!-- end of footer -->
 
-  </div>
+
     <!-- Custtom Js Script -->
     <script type="text/javascript" src="js/GlobalVars.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>

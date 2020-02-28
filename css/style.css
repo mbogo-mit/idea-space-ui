@@ -1,6 +1,5 @@
 body {
   overflow-y: hidden;
-  position: relative !important;
 }
 
 .ideaSpace-logo {
@@ -105,8 +104,8 @@ body {
 }
 
 #my-footer-copyright {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 15px !important;
+  padding-bottom: 25px !important;
 }
 
 #my-page-footer {
@@ -115,6 +114,7 @@ body {
 
 #footer-container {
   margin-top:-20px;
+  height:75px;
 }
 
 #link-to-AS {
@@ -147,7 +147,7 @@ body {
 #idea-space-opener-container {
   padding-top: 20px;
   overflow-x: visible !important;
-  position: relative !important;
+  position: absolute !important;
 }
 
 #btn-filter-annotations {
@@ -174,8 +174,8 @@ body {
 }
 
 #idea-space-opener-container-col {
+  position: absolute !important;
   background-color: gray;
-  position: relative;
   z-index: 10;
   overflow-x: visible !important;
   position: relative !important;
@@ -373,9 +373,7 @@ body {
   background-color: #616161 !important;
 }
 
-.my-summernote-containers {
-  height: 6px !important;
-}
+
 
 #modal-content-create-new-outline {
   padding-bottom: 0px !important;
@@ -387,4 +385,16 @@ body {
 
 #modal-footer-create-new-idea-space {
   margin-top: -30px;
+}
+
+#annotation-results-container {
+  margin-bottom: 20px;
+}
+
+.save-materialnote {
+  display:none;
+}
+
+.fitlering-options-container {
+  padding: 0px !important;
 }
