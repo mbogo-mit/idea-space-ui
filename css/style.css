@@ -147,7 +147,6 @@ body {
 #idea-space-opener-container {
   padding-top: 20px;
   overflow-x: visible !important;
-  position: absolute !important;
 }
 
 #btn-filter-annotations {
@@ -238,15 +237,15 @@ body {
 }
 
 .meta-data-chip-tag-color-1 {
-  background-color: #43a047;//green darken-1
+  background-color: #43a047;
 }
 
 .meta-data-chip-tag-color-2 {
-  background-color: #8e24aa;//purple darken-1
+  background-color: #8e24aa;
 }
 
 .meta-data-chip-tag-color-3 {
-  background-color: #e53935;// red darken-1
+  background-color: #e53935;
 }
 
 .annotation-meta-data-tag {
