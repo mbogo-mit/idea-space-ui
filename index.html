@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom CSS-->
+    <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+
+    <!-- Vendor CSS-->
+    <link href="vendor/css/materialNote.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+
+    <!-- Vendor JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="vendor/js/materialNote.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/GlobalVars.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav>
+     <div  id="my-nav-wrapper" class="nav-wrapper teal">
+       <a href="#" class=" ideaSpace-logo brand-logo">Idea Space</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down teal">
+         <li><a id="link-to-AS" href="collapsible.html">Annotation Studios</a></li>
+       </ul>
+     </div>
+    </nav>
+    <!-- end of navbar -->
+
+   <!-- this container holds everything the user sees except the footer
+        the view is split up into a left and right view where left holds everything
+        concerning the outlines and right holds everything concerning the idea spaces
+        Each view has two states:
+          for the left side (outlines) - state 1 = outlines from different classes and template outlines
+                                       - state 2 = the view that shows the outlines open and you can actually edit and save content
+          for the right side (idea spaces) - state 1 = choosing and creating new idea spaces
+                                           - state 2 = going inside existing idea spaces, displaying and using the annotations inside the ideaspace
+    -->
+
+   <div class="row">
+
+
+     <!-- #outline-container
+          -holds everything on the right left side of the page
+            dealing with the outlines from different classes to opening the actual outline
+          -holds both states 1 and 2
+    -->
+     <div id="outline-container" class="col m8 grey lighten-4">
+
+      <div id="outline-holder-view-opener">
+         <div id="outline-header-holder" class="row center-align">
+           <div class="col m7 offset-m2">
+             <h5>Outlines</h5>
+           </div>
+           <div class="col m3">
+             <a id="btn-create-new-outline" class="waves-effect waves-light btn outline-headers modal-trigger" href="#modal-create-new-outline">New Outline</a>
+             <div id="modal-create-new-outline" class="modal">
+                <div id="modal-content-create-new-outline" class="modal-content">
+                  <div class="row center">
+                      <h4>Create New Oultine</h4>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <i class="material-icons prefix">textsms</i>
+                      <input type="text" id="input-outline-name">
+                      <label for="input-outline-name">Outline Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <i class="material-icons prefix">textsms</i>
+                      <input type="text" id="input-group-name" class="autocomplete">
+                      <label for="input-group-name">Group Name</label>
+                    </div>
+                  </div>
+                </div>
+                <div id="modal-footer-create-new-outline" class="modal-footer">
+                  <a id="modal-btn-cancel-new-outline" class="modal-close waves-effect waves-light btn">Cancel</a>
+                  <a id="modal-btn-create-new-outline" class="modal-close waves-effect waves-light btn">Create</a>
+                </div>
+              </div>
+           </div>
+         </div>
+
+         <div id="outline-holder" class="row">
+           <div class="class-outline-holder">
+             <div class="row group-names-row">
+               <a class="waves-effect waves-light btn outline-headers">New Template</a>
+               <div class="divider-line-group-names"></div>
+             </div>
+             <div class="row">
+               <div class="col m4 l4">
+                 <div class="card outline-card-trigger">
+                  <div class="card-content my-card-content">
+                    <span class="activator grey-text text-darken-4"><i class="material-icons left">cloud</i>Card Title<i class="material-icons right">more_vert</i></span>
+                  </div>
+                </div>
+               </div>
+               <div class="col m4 l4">
+                 <div class="card outline-card-trigger">
+                  <div class="card-content my-card-content">
+                    <span class="activator grey-text text-darken-4"><i class="material-icons left">cloud</i>Card Title<i class="material-icons right">more_vert</i></span>
+                  </div>
+                </div>
+               </div>
+               <div class="col m4 l4">
+                 <div class="card outline-card-trigger">
+                  <div class="card-content my-card-content">
+                    <span class="activator grey-text text-darken-4"><i class="material-icons left">cloud</i>Card Title<i class="material-icons right">more_vert</i></span>
+                  </div>
+                </div>
+               </div>
+             </div>
+           </div>
+           <div class="class-outline-holder">
+             <div class="row group-names-row">
+               <a class="btn-collapsible-group btn-collapsible-trigger-1 waves-effect waves-light btn outline-headers">Group Name 1</a>
+               <div id="divider-line-group-names-1" class="divider-line-group-names"></div>
+             </div>
+             <div id="wrapper-collapsible-group-1" class="open wrapper-collapsible-group">
+               <div id="list-collapsible-group-1">
+                 <div class="row">
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="class-outline-holder">
+             <div class="row group-names-row">
+               <a class="btn-collapsible-group btn-collapsible-trigger-2 waves-effect waves-light btn outline-headers">Group Name 2</a>
+               <div id="divider-line-group-names-2" class="divider-line-group-names"></div>
+             </div>
+             <div id="wrapper-collapsible-group-2" class="open wrapper-collapsible-group">
+               <div id="list-collapsible-group-2">
+                 <div class="row">
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="class-outline-holder">
+             <div class="row group-names-row">
+               <a class="btn-collapsible-group btn-collapsible-trigger-3 waves-effect waves-light btn outline-headers">Group Name 3</a>
+               <div id="divider-line-group-names-3" class="divider-line-group-names"></div>
+             </div>
+             <div id="wrapper-collapsible-group-3" class="open wrapper-collapsible-group">
+               <div id="list-collapsible-group-3">
+                 <div class="row">
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="class-outline-holder">
+             <div class="row group-names-row">
+               <a class="btn-collapsible-group btn-collapsible-trigger-4 waves-effect waves-light btn outline-headers">Group Name 4</a>
+               <div id="divider-line-group-names-4" class="divider-line-group-names"></div>
+             </div>
+             <div id="wrapper-collapsible-group-4" class="open wrapper-collapsible-group">
+               <div id="list-collapsible-group-4">
+                 <div class="row">
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="class-outline-holder">
+             <div class="row group-names-row">
+               <a class="btn-collapsible-group btn-collapsible-trigger-5 waves-effect waves-light btn outline-headers">Group Name 5</a>
+               <div id="divider-line-group-names-5" class="divider-line-group-names"></div>
+             </div>
+             <div id="wrapper-collapsible-group-5" class="open wrapper-collapsible-group">
+               <div id="list-collapsible-group-5">
+                 <div class="row">
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                   <div class="col m4 l4">
+                     <div class="card outline-card-trigger">
+                      <div class="card-content my-card-content">
+                        <span class="activator grey-text text-darken-4">Card Title<i style="margin-top:5px;" class="material-icons right">more_vert</i></span>
+                        <p class="card-outline-date">Jan 12, 2019</p>
+                      </div>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+      </div>
+
+
+
+      <div id="open-outline-view-container">
+          <div class="materialize-iso">
+            <nav>
+            <div class="nav-wrapper grey lighten-4">
+              <ul id="nav-outline-view" class="hide-on-med-and-down">
+                <li><a class="black-text" href="sass.html">Overview</a></li>
+                <li class="active"><a class="black-text" href="badges.html">Write</a></li>
+                <li><a class="black-text" href="collapsible.html">Export / Print</a></li>
+              </ul>
+            </div>
+          </nav>
+          </div>
+          <div class="row">
+            <div class="col m12">
+              <div id="paper-outline-container">
+                <div id="unique-inner-dropzone-id-1" class="interact-dropzone"></div><!--this dropzone was created when the paper outline container was created-->
+
+                <div  id="unique-block-id-1" class="interact-draggable">
+                  <div class="row block-row">
+                    <div class="col m12">
+                      <div class="card block-card block-card-level-1 z-depth-0">
+                        <div class="card-content">
+                            <div class="my-materialnote-containers">click2edit</div>
+                            <button class="btn btn-primary save-materialnote" type="button">Save 2</button>
+                          <h5 class="block-header">Introduction</h5>
+                          <div id="unique-inner-dropzone-id-2" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
+
+                          <p id="unique-block-note-id-1" class="block-note my-materialnote-containers">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                          <button class="btn btn-primary save-materialnote" type="button">Save 2</button>
+
+                          <div id="unique-bottom-dropzone-id-3" class="interact-dropzone"></div><!--this dropzone was created when the block note was created-->
+
+                          <div id="unique-block-id-2" class="interact-draggable">
+                            <div class="row block-row">
+                              <div class="col m12">
+                                <div class="card block-card block-card-level-2 z-depth-0">
+                                  <div class="card-content">
+                                    <h6 class="block-header">Section 1</h6>
+                                    <div id="unique-inner-dropzone-id-4" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
+
+                                    <p id="unique-block-note-id-2" class="block-note interact-draggable my-materialnote-containers">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                    <button class="btn btn-primary save-materialnote" type="button">Save 2</button>
+
+                                    <div id="unique-bottom-dropzone-id-5" class="interact-dropzone"></div><!--this dropzone was created when the block note was created-->
+
+                                    <div id="unique-block-id-3" class="interact-draggable">
+                                      <div class="row block-row">
+                                        <div class="col m12">
+                                          <div class="card block-card block-card-level-3 z-depth-0">
+                                            <div class="card-content">
+                                              <h6 class="block-header">Section 1.2</h6>
+                                              <div id="unique-inner-dropzone-id-6" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
+
+                                              <p id="unique-block-note-id-3" class="block-note">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                              <div id="unique-bottom-dropzone-id-7" class="interact-dropzone"></div><!--this dropzone was created when the block note was created-->
+
+                                              <div id="unique-block-id-4" class="interact-draggable">
+                                                <div class="row block-row">
+                                                  <div class="col m12">
+                                                    <div class="card block-card block-card-level-4 z-depth-0">
+                                                      <div class="card-content">
+                                                        <h6 class="block-header">Section 1.3</h6>
+                                                        <div id="unique-inner-dropzone-id-8" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
+
+                                                        <p id="unique-block-note-id-4" class="block-note">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                                        <div id="unique-bottom-dropzone-id-9" class="interact-dropzone"></div><!--this dropzone was created when the block note was created-->
+
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <p id="unique-block-note-id-5" class="block-note">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                          <div id="unique-block-id-5" class="interact-draggable">
+                            <div class="row block-row">
+                              <div class="col m12">
+                                <div class="card block-card block-card-level-2 z-depth-0">
+                                  <div class="card-content">
+                                    <h6 class="block-header">Section 1.1</h6>
+                                    <p id="unique-block-note-id-6" class="block-note">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div id="outline-view-progess-bar" class="center">
+        <h6>Loading Your Outline</h6>
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+      </div>
+
+
+     </div>
+
+
+     <!-- #idea-space-container-col
+          - holds everyting to do with state 1 of idea spaces
+          - default is visible
+
+     -->
+     <div id="idea-space-container-col" class="col m4" style="visibility: visible;">
+       <div id="idea-space-container">
+
+         <div id="idea-space-header-container">
+           <div id="idea-space-header-row" class="row">
+             <div class="col m8 offset-m2">
+               <div id="choose-idea-space-label" class="center"><h6>Choose Idea Space</h6></div>
+             </div>
+             <div class="col m2">
+               <!-- #add-new-idea-space
+                    - button that opens up a modal and allows people to create new idea space
+               -->
+               <a id="add-new-idea-space" class="btn-floating btn waves-effect waves-light red right modal-trigger" href="#modal-create-new-idea-space"><i class="material-icons tooltipped" data-position="left">add</i></a>
+             </div>
+             <!-- #modal-create-new-idea-space
+                  - pop up that allows people to make a new idea space
+                  - it must share the idea space with the specified groups and people (#input-share-idea-space)
+             -->
+             <div id="modal-create-new-idea-space" class="modal">
+                <div id="modal-content-create-new-outline" class="modal-content">
+                  <div class="row center">
+                      <h4>Create New Idea Space</h4>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <i class="material-icons prefix">textsms</i>
+                      <input type="text" id="input-idea-space-name">
+                      <label for="input-idea-space-name">Idea Space Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col m12">
+                      <i class="material-icons prefix">textsms</i>
+                      <div id="input-share-idea-space" class="chips chips-autocomplete"></div>
+
+                    </div>
+                  </div>
+                </div>
+                <div id="modal-footer-create-new-idea-space" class="modal-footer">
+                  <a id="modal-btn-cancel-new-idea-space" class="modal-close waves-effect waves-light btn">Cancel</a>
+                  <a id="modal-btn-create-new-idea-space" class="modal-close waves-effect waves-light btn">Create</a>
+                </div>
+              </div>
+           </div>
+           <div class="row">
+             <div class="col m12">
+               <div class="divider-line-idea-space-names"></div>
+             </div>
+           </div>
+         </div>
+         <div id="idea-space-name-container">
+
+           <!-- .idea-space-row
+                - this block of code must be repeated multiple times based on what the query from the data base returns
+                - it creates multip idea-space-row blocks of code and fills them up with the appropriate meta-data
+                Meta Data:
+                  - #unique-idea-space-id: id that allows the program to know that
+                    when this block of code is clicked which Idea space to pull up based on this specific id
+           -->
+           <div class="idea-space-row">
+             <div id="unique-idea-space-id" class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <!-- end of block (.idea-space-row ) -->
+
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+           <div class="idea-space-row">
+             <div class="idea-space-name">Name of Idea Space</div>
+             <div class="divider-line-idea-space-names"></div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+     <!-- #idea-space-opener-container-col
+          - holds everyting to do with state 2 of idea spaces
+          - default is not visible and slides in when a user chooses an idea space
+
+          Data:
+            Name of Idea Space: grap from database based on the button that was clicked to open up this idea space
+            #wrapper-collapsible-filters: fill the filter with all appropriate data (example: the names of everyone that contributed to idea space so you can filter by them)
+     -->
+     <div id="idea-space-opener-container-col" class="col m4 white" style="visibility: visible;">
+       <div id="idea-space-opener-container">
+         <div class="row">
+            <div class="col m9 offset-m1">
+              <!--"Name of Idea Space" dynamically filled-->
+              <h6>Name Of Idea Space</h6>
+            </div>
+            <div class="col m2">
+              <div id="btn-return-to-idea-spaces">
+                <i class="material-icons right">arrow_forward</i>
+              </div>
+            </div>
+         </div>
+         <div clas="row">
+           <div class="col m9 offset-m1 center-align">
+             <a id="btn-filter-annotations" class="waves-effect waves-light btn"><i class="material-icons left">filter_list</i>Filter Annotations</a>
+           </div>
+           <div class="col m1 left" style="padding-left:0px;">
+             <!-- #btn-update-filters
+                  - when clicked it will look at the options inside of filters and creates a query that queries the database
+                    and updates annotaitons appropriately
+             -->
+             <a id="btn-update-filters" class="btn-floating pulse"><i class="material-icons">sync</i></a>
+           </div>
+         </div>
+           <div id="annotation-filter-options-container" class="row">
+             <div class="col m12">
+               <!-- #wrapper-collapsible-filters
+                    dynamically filled by query to databased to get :
+                      - (Annotated By): everyone who contributed to idea space
+                      - (By Class): get all classes that annotations come from
+                      - (By Document): get all documents that annotations come from
+                      - (By Tags): get all tags that annotations come from
+                      - (By Date Created): no action needed
+
+               -->
+               <div id="wrapper-collapsible-filters">
+                 <div id="list-collapsible-filters">
+                   <ul class="collapsible expandable">
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">format_quote</i>Annotated By</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>John Boy</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Sam Smith</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Fredrick Douglas</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>James Brown</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Lebron James</span>
+                          </label>
+                        </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">class</i>By Class</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>John Boy</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Sam Smith</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Fredrick Douglas</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>James Brown</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Lebron James</span>
+                          </label>
+                        </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">assignment</i>By Document</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>John Boy</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Sam Smith</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Fredrick Douglas</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>James Brown</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Lebron James</span>
+                          </label>
+                        </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">bookmark</i>By Tags</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>John Boy</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Sam Smith</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Fredrick Douglas</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>James Brown</span>
+                          </label>
+                        </p>
+                        <p class="fitlering-options-container">
+                          <label>
+                            <input type="checkbox" />
+                            <span>Lebron James</span>
+                          </label>
+                        </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">event</i>By Date Created</div>
+                      <div class="collapsible-body filter-collapsible-body">
+                        <div class="filter-options-collapsible-body">
+                        <div class="row">
+                          <div class="col m6">
+                            <input id="input-start-date" type="text" class="datepicker">
+                            <label for="input-start-date">Start Date</label>
+                          </div>
+                          <div class="col m6">
+                            <input id="input-end-date" type="text" class="datepicker">
+                            <label for="input-end-date">End Date</label>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </li>
+                    </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div id="annotation-results-information-section">
+           <div id="annotation-results-container" class="row">
+             <div class="col m12 center-align grey-text darken-2">
+
+               <!-- #annotation-results-info
+                    - dynamically created by looking at how many annotations fit the specifications of the query from the database
+               -->
+               <p id="annotation-results-info">Viewing 126 annotations from 3 documents, grouped by tag</p>
+
+             </div>
+           </div>
+
+           <!-- #pagination-container
+                - holds pagination tools to go through query once all the data is gathered pagination will happen on client side
+           -->
+           <div id="pagination-container">
+             <div class="row">
+               <div class="col m12 center-align">
+                 <ul id="annotation-results-ul" class="pagination">
+                    <li class="chevron-left-pagination disabled"><a href="#!"><i class="material-icons filter-pagination-icon">chevron_left</i></a></li>
+                    <li class="active waves-effect"><a id="filter-pagination-1" class="filter-pagination-element" href="#!">1</a></li>
+                    <li class="waves-effect"><a id="filter-pagination-2" class="filter-pagination-element" href="#!">2</a></li>
+                    <li class="waves-effect"><a id="filter-pagination-3" class="filter-pagination-element" href="#!">3</a></li>
+                    <li class="waves-effect"><a id="filter-pagination-4" class="filter-pagination-element" href="#!">4</a></li>
+                    <li class="waves-effect"><a id="filter-pagination-5" class="filter-pagination-element" href="#!">5</a></li>
+                    <li class="chevron-right-pagination waves-effect"><a class="filter-pagination-element" href="#!"><i class="material-icons filter-pagination-icon">chevron_right</i></a></li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+           <div id="container-for-all-annotation-cards" style="margin-top: 30px !important;">
+
+             <!-- .annotation-card-container
+                  - this block of code will be iterated thorugh multiple times to create multiple annotation cards and each card will dynamically be filled with data
+                  Data:
+                    (All database calls are from annotation store but once they move onto outline it comes from mongodb)
+                    #unique-block-id-34: this is the unique block id for this annotation and must be generated from database call
+                    .card-annotated-text: the text that was being annotated dynamically generated from database call
+                    .card-annotation: annotation
+                    .meta-data-chips: holds information about the annotation: username, document name, group name, date made, tags
+              -->
+             <div id="unique-block-id-34" class="annotation-card-container interact-draggable">
+               <div class="row">
+                 <div class="col m12">
+                     <div class="card white hoverable">
+                      <div class="card-content">
+                        <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively."</p>
+                        <div class="text-annotation-dividing-line"></div>
+                        <p class="card-annotation">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                        <div class="row annotation-meta-data-container">
+                          <div class="col m12">
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">person_outline</i>Username</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document Name</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name</div>
+                              </div>
+                              <div class="chip meta-data-chips">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">access_time</i>Date made</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags meta-data-chip-tag-color-1">
+                                <div class="annotation-meta-data annotation-meta-data-tag"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 2</div>
+                              </div>
+                              <div class="chip meta-data-chips meta-data-chip-tags">
+                                <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 3</div>
+                              </div>
+                              <i class="material-icons right">more_vert</i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+   </div>
+
+   <!-- footer which more information could be added too -->
+   <div id="footer-container" class="z-depth-1">
+     <footer id="my-page-footer" class="page-footer white">
+      <div id="my-footer-copyright" class="footer-copyright white black-text">
+        <div class="container">
+        © 2014 Copyright Text
+        <a class="black-text right" href="#!">MIT Digital Humanities Lab</a>
+        </div>
+      </div>
+    </footer>
+   </div>
+   <!-- end of footer -->
+
+
+  </body>
+</html>
