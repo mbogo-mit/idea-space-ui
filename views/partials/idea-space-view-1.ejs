@@ -1,0 +1,122 @@
+<div id="idea-space-container">
+
+  <div id="idea-space-header-container">
+    <div id="idea-space-header-row" class="row">
+      <div class="col m8 offset-m2">
+        <div id="choose-idea-space-label" class="center"><h6>Choose Idea Space</h6></div>
+      </div>
+      <div class="col m2">
+        <!-- #add-new-idea-space
+             - button that opens up a modal and allows people to create new idea space
+        -->
+        <a id="add-new-idea-space" class="btn-floating btn waves-effect waves-light red right modal-trigger" href="#modal-create-new-idea-space"><i class="material-icons tooltipped" data-position="left">add</i></a>
+      </div>
+      <!-- #modal-create-new-idea-space
+           - pop up that allows people to make a new idea space
+           - it must share the idea space with the specified groups and people (#input-share-idea-space)
+      -->
+      <div id="modal-create-new-idea-space" class="modal">
+         <div id="modal-content-create-new-outline" class="modal-content">
+           <div class="row center">
+               <h4>Create New Idea Space</h4>
+           </div>
+           <div class="row">
+             <div class="input-field col m12">
+               <i class="material-icons prefix">textsms</i>
+               <input type="text" id="input-idea-space-name">
+               <label for="input-idea-space-name">Idea Space Name</label>
+             </div>
+           </div>
+           <div class="row">
+             <div class="input-field col m12">
+               <i class="material-icons prefix">textsms</i>
+               <div id="input-share-idea-space" class="chips chips-autocomplete"></div>
+
+             </div>
+           </div>
+         </div>
+         <div id="modal-footer-create-new-idea-space" class="modal-footer">
+           <a id="modal-btn-cancel-new-idea-space" class="modal-close waves-effect waves-light btn">Cancel</a>
+           <a id="modal-btn-create-new-idea-space" class="modal-close waves-effect waves-light btn">Create</a>
+         </div>
+       </div>
+    </div>
+    <div class="row">
+      <div class="col m12">
+        <div class="divider-line-idea-space-names"></div>
+      </div>
+    </div>
+  </div>
+  <div id="idea-space-name-container">
+
+    <!-- .idea-space-row
+         - this block of code must be repeated multiple times based on what the query from the data base returns
+         - it creates multip idea-space-row blocks of code and fills them up with the appropriate meta-data
+         Meta Data:
+           - #unique-idea-space-id: id that allows the program to know that
+             when this block of code is clicked which Idea space to pull up based on this specific id
+    -->
+    <div class="idea-space-row">
+      <div id="unique-idea-space-id" class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <!-- end of block (.idea-space-row ) -->
+
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+    <div class="idea-space-row">
+      <div class="idea-space-name">Name of Idea Space</div>
+      <div class="divider-line-idea-space-names"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,414 @@
+body {
+  overflow-y: hidden;
+}
+
+.ideaSpace-logo {
+  margin-left: 15px;
+}
+
+#outline-holder {
+  padding-left: 60px;
+  padding-right: 20px;
+}
+
+.outline-headers {
+  border-radius: 20px;
+}
+
+.my-card-content {
+  padding:10px !important;
+}
+
+.divider-line-group-names {
+  height:1px;
+  background-color: #e0e0e0;
+  width:90%;
+  margin-top: -18px;
+  transition: width 200ms;
+}
+
+.divider-line-idea-space-names {
+  height:1px;
+  background-color: #e0e0e0;
+  margin-left:5%;
+  width:90%;
+}
+
+#outline-header-holder {
+  padding-top:5px;
+  margin-bottom:0px;
+}
+
+.group-names-row {
+  margin-bottom: 35px;
+}
+
+.card-outline-date {
+  font-size: 10px;
+}
+
+#outline-container {
+  margin-top:0px;
+  padding: 0px;
+}
+
+#open-outline-view-container {
+  margin-top: 0px;
+  display:none;
+}
+
+.card {
+  cursor: pointer;
+}
+
+#outline-view-progess-bar {
+  position:relative;
+  width: 80%;
+  margin-left: 10%;
+  top: -400px;
+  color:#424242;
+  display: none;
+}
+
+#outline-holder {
+  overflow-y: scroll;
+}
+
+
+
+#choose-idea-space-label {
+  margin-top:20px;
+}
+
+#add-new-idea-space {
+  margin-top: 10px;
+}
+
+#btn-create-new-outline {
+  margin-top: 20px;
+}
+
+.idea-space-name {
+  padding-top:20px;
+  padding-bottom: 20px;
+  margin-left: 5%;
+}
+
+#idea-space-name-container {
+  overflow-y: scroll;
+  margin-top: -20px;
+}
+
+#idea-space-header-container {
+  margin-top:8px;
+}
+
+#my-footer-copyright {
+  padding-top: 15px !important;
+  padding-bottom: 25px !important;
+}
+
+#my-page-footer {
+  padding: 0px;
+}
+
+#footer-container {
+  margin-top:-20px;
+  height:75px;
+}
+
+#link-to-AS {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.idea-space-row {
+  cursor: default;
+}
+
+.wrapper-collapsible-group {
+  overflow: hidden;
+  transition: height 200ms;
+}
+
+#wrapper-collapsible-filters {
+  overflow-y: hidden;
+  height: 0px;
+}
+
+#annotation-filter-options-container {
+  margin-bottom: 0px;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+#btn-return-to-idea-spaces {
+  padding-top: 10px;
+}
+
+#idea-space-opener-container {
+  padding-top: 20px;
+  overflow-x: visible !important;
+}
+
+#btn-filter-annotations {
+  width: 100%;
+}
+
+#annotation-results-info {
+  font-size: 12px;
+  padding-top: 0px;
+  margin-bottom: 5px;
+}
+
+.filter-pagination-element {
+  font-size: 14px !important;
+}
+
+.filter-pagination-icon {
+  padding-top: 5px;
+  font-size: 20px !important;
+}
+
+#pagination-container {
+  margin-top:-55px;
+}
+
+#idea-space-opener-container-col {
+  position: absolute !important;
+  background-color: gray;
+  z-index: 10;
+  overflow-x: visible !important;
+  position: relative !important;
+}
+
+#btn-return-to-idea-spaces {
+  cursor: pointer;
+}
+
+.card-annotated-text {
+  color: #424242;
+}
+
+.text-annotation-dividing-line {
+  height: 1px;
+  background-color: #e0e0e0;
+  width: 98%;
+  margin-top:8px;
+  margin-bottom: 8px;
+  margin-left: 1%;
+}
+
+.card-annotated-text {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.block-note {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.card-annotation {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.annotation-meta-data-container {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.meta-data-tag-icons {
+  margin-top: 7px;
+  font-size: 18px;
+  margin-right: 5px !important;
+  color:rgba(50,50,50,0.4);
+}
+
+.annotation-meta-data {
+  font-size: 10px;
+}
+
+.meta-data-chips {
+  margin-right:0px !important;
+  cursor: pointer;
+  transition: background-color 500ms;
+}
+
+.meta-data-chips:hover {
+  background-color: #b2dfdb;
+}
+
+.meta-data-chip-tag-color-1 {
+  background-color: #43a047;
+}
+
+.meta-data-chip-tag-color-2 {
+  background-color: #8e24aa;
+}
+
+.meta-data-chip-tag-color-3 {
+  background-color: #e53935;
+}
+
+.annotation-meta-data-tag {
+  color:white !important;
+}
+
+.filter-collapsible-body {
+  padding-top: 5px;
+}
+
+.filter-options-collapsible-body {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.annotation-card-container {
+  margin-top: -25px;
+}
+
+.container-for-all-annotation-cards {
+  margin-top: -30px;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: visible !important;
+  position: relative !important;
+}
+
+.hoverable {
+  cursor: pointer;
+}
+
+#nav-outline-view {
+  padding-left: 50px;
+}
+
+#paper-outline-container {
+  margin-top: 2px;
+  background-color: white;
+  height: 560px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-y: scroll;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.block-row {
+  margin-bottom: 5px;
+}
+
+.block-card {
+  margin-bottom: 0px;
+  border-radius: 5px;
+}
+
+.block-card-level-1 {
+  border-style: solid;
+  border-width: 0px 0px 0px 2px;
+  border-color: green;
+}
+
+.block-card-level-2 {
+  border-style: solid;
+  border-width: 0px 0px 0px 2px;
+  border-color: blue;
+}
+
+.block-card-level-3 {
+  border-style: solid;
+  border-width: 0px 0px 0px 2px;
+  border-color: red;
+}
+
+.block-card-level-4 {
+  border-style: solid;
+  border-width: 0px 0px 0px 2px;
+  border-color: cyan;
+}
+
+.block-card-level-5 {
+  border-style: solid;
+  border-width: 0px 0px 0px 2px;
+  border-color: yellow;
+}
+
+.interact-draggable {
+  position: relative !important;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+.interact-dropzone {
+  position: relative !important;
+  height: 10px;
+  background-color: green;
+  opacity: 0.0;
+}
+
+.outline-annotation {
+  margin-top: 25px !important;
+  margin-bottom: -25px !important;
+}
+
+.card-content {
+  overflow-y: hidden !important;
+  padding-top: 10px !important;
+}
+
+#annotation-results-information-section {
+  overflow-y: hidden;
+}
+
+#tooltip-create-ideaspace {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.material-tooltip {
+  background-color: #616161 !important;
+}
+
+
+
+#modal-content-create-new-outline {
+  padding-bottom: 0px !important;
+}
+
+#modal-footer-create-new-outline {
+  margin-top: -30px;
+}
+
+#modal-footer-create-new-idea-space {
+  margin-top: -30px;
+}
+
+#annotation-results-container {
+  margin-bottom: 20px;
+}
+
+.save-materialnote {
+  display:none;
+}
+
+.fitlering-options-container {
+  padding: 0px !important;
+}
+
+.btn-collapse-block {
+  visibility: hidden;
+  transform: rotate(180deg);
+}
+
+.icon-color-btn-collapse-block {
+  color: #4db6ac !important;
+}
+
+#btn-update-filters-container {
+  padding-left:0px;
+}
