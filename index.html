@@ -11,14 +11,15 @@
     <!-- Vendor CSS-->
     <link href="vendor/css/materialNote.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  
+
 
     <!-- Vendor JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="vendor/js/materialNote.js"></script>
+    <script type="text/javascript" src="vendor/js/ckMaterializeOverrides.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-    
+
     <!-- Custom JS -->
     <script type="text/javascript" src="js/GlobalVars.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
@@ -335,7 +336,14 @@
                         <div class="card-content">
                             <div class="my-materialnote-containers">click2edit</div>
                             <button class="btn btn-primary save-materialnote" type="button">Save 2</button>
-                          <h5 class="block-header">Introduction</h5>
+                            <div class="row">
+                              <div class="col m11">
+                                <h5 class="block-header">Introduction</h5>
+                              </div>
+                              <div class="col m1">
+                                <i class="material-icons right btn-collapse-block">arrow_drop_down_circle</i>
+                              </div>
+                            </div>
                           <div id="unique-inner-dropzone-id-2" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
 
                           <p id="unique-block-note-id-1" class="block-note my-materialnote-containers">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
@@ -348,7 +356,14 @@
                               <div class="col m12">
                                 <div class="card block-card block-card-level-2 z-depth-0">
                                   <div class="card-content">
-                                    <h6 class="block-header">Section 1</h6>
+                                    <div class="row">
+                                      <div class="col m11">
+                                        <h6 class="block-header">Section 1</h6>
+                                      </div>
+                                      <div class="col m1">
+                                        <i class="material-icons right btn-collapse-block">arrow_drop_down_circle</i>
+                                      </div>
+                                    </div>
                                     <div id="unique-inner-dropzone-id-4" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
 
                                     <p id="unique-block-note-id-2" class="block-note interact-draggable my-materialnote-containers">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
@@ -361,7 +376,16 @@
                                         <div class="col m12">
                                           <div class="card block-card block-card-level-3 z-depth-0">
                                             <div class="card-content">
-                                              <h6 class="block-header">Section 1.2</h6>
+                                              <div class="row">
+                                                <div class="col m11">
+                                                  <h6 class="block-header">Section 1.2</h6>
+                                                </div>
+                                                <div class="col m1">
+                                                  <i class="material-icons right btn-collapse-block">arrow_drop_down_circle</i>
+                                                </div>
+                                              </div>
+
+
                                               <div id="unique-inner-dropzone-id-6" class="interact-dropzone"></div><!--this dropzone was created when the block header was created-->
 
                                               <p id="unique-block-note-id-3" class="block-note">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
@@ -399,7 +423,14 @@
                               <div class="col m12">
                                 <div class="card block-card block-card-level-2 z-depth-0">
                                   <div class="card-content">
-                                    <h6 class="block-header">Section 1.1</h6>
+                                    <div class="row">
+                                      <div class="col m11">
+                                        <h6 class="block-header">Section 1.1</h6>
+                                      </div>
+                                      <div class="col m1">
+                                        <i class="material-icons right btn-collapse-block">arrow_drop_down_circle</i>
+                                      </div>
+                                    </div>
                                     <p id="unique-block-note-id-6" class="block-note">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
                                   </div>
                                 </div>

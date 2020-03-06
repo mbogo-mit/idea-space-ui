@@ -15,25 +15,6 @@ var save = function() {
 };
 
 
-$('.my-materialnote-containers').click(function(){
-  $(this).next().css("display","block");
-  $(this).materialnote({focus: true});
-
-});
-
-$('.save-materialnote').click(function(){
-  var h;
-  /*
-  $(this).prev().children('.note-editable').each(function(index){
-    console.log($(this));
-    h = $(this).height();
-  });*/
-  var h = $(this).prev().children('.note-editable').height() - 60;
-  $(this).prev().prev().destroy();
-  $(this).prev().prev().height(h);
-  $(this).css("display","none");
-});
-
 var ID = function () {
   // Math.random should be unique because of its seeding algorithm.
   // Convert it to base 36 (numbers + letters), and grab the first 9 characters

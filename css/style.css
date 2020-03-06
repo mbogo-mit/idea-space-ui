@@ -397,3 +397,7 @@ body {
 .fitlering-options-container {
   padding: 0px !important;
 }
+
+.btn-collapse-block {
+  visibility: hidden;
+}

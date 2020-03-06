@@ -181,15 +181,28 @@ $( document ).ready(function() {
 
   $(".block-card").hover(function(){//hover in
     //clear any block that may have this styling
-    $(".block-card").addClass("z-depth-0");
+    //$(".block-card").addClass("z-depth-0");
     $(this).removeClass("z-depth-2");
     //add the styling to this specific block
     $(this).addClass("z-depth-2");
     $(this).removeClass("z-depth-0");
+    //making the collapse btn visible if the user wants to collapse card
+    $("#" + $(this).parent().parent().parent().attr('id') + " .btn-collapse-block").each(function(index){
+      if(index == 0){
+        $(this).css('visibility','visible');
+      }
+    });
+    //$("#" + $(this).parent().parent().parent().attr('id') + " .btn-collapse-block").css('visibility','visible');
+    //$(this).find('.btn-collapse-block').css('visibility','visible');
   },function(){//hover out
     //remove style for specific block
     $(this).addClass("z-depth-0");
     $(this).removeClass("z-depth-2");
+    $("#" + $(this).parent().parent().parent().attr('id') + " .btn-collapse-block").each(function(index){
+      if(index == 0){
+        $(this).css('visibility','hidden');
+      }
+    });
   });
 
 
@@ -198,6 +211,25 @@ $( document ).ready(function() {
     console.log($(this).attr("id"));
   });
 
+  $('.my-materialnote-containers').click(function(){
+    console.log('hi');
+    $(this).next().css("display","block");
+    $(this).materialnote({focus: true});
+
+  });
+
+  $('.save-materialnote').click(function(){
+    var h;
+    /*
+    $(this).prev().children('.note-editable').each(function(index){
+      console.log($(this));
+      h = $(this).height();
+    });*/
+    var h = $(this).prev().children('.note-editable').height() - 60;
+    $(this).prev().prev().destroy();
+    $(this).prev().prev().height(h);
+    $(this).css("display","none");
+  });
 
 
   //INTERACTJS Event Listeners-------------------------------------------------------------------------------------------
@@ -248,23 +280,25 @@ $( document ).ready(function() {
 
   });
 
-  $(".block-header").click(function(){
-    console.log($(this).parent(".card-content").height());
+  $(".btn-collapse-block").click(function(){
+    var collapsedHeight = 50;
+    var extraPadding = 30;
+    var p = $(this).parent().parent().parent(".card-content");
     if($(this).hasClass('collapsed-card-content')){
       //the header is collapsed and user wants to open the header
       $(this).removeClass('collapsed-card-content');
-      $(this).parent(".card-content").css("height","100%");
-      var h = $(this).parent(".card-content").height();
-      $(this).parent(".card-content").height($(this).next().position().top);
+      p.css("height","100%");
+      var h = p.height();
+      p.height(collapsedHeight);
       //if($(this).parent(".card-content").parent(".card-content"))
-      $(this).parent(".card-content").animate({ height: h + 50 }, 1000);
+      p.animate({ height: h + extraPadding }, 1000);
 
     }
     else{
-      $(this).next().position().top
-      $(this).parent(".card-content").animate({ height: $(this).next().position().top }, 2000);
+      p.animate({ height: collapsedHeight }, 2000);
       $(this).addClass("collapsed-card-content");
     }
+
   });
 
   $("#annotation-results-ul > li").click(function(){
