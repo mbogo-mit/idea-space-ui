@@ -22,3 +22,6 @@ var blockIdPositions = [];
 var CURRENTPAGENUMBER = 1;
 var LASTPAGENUMBER = 7;
 var MATERIALNOTEOPEN = false;
+
+//For Idea Space Title functionality
+IDEASPACETITLEFOCUSED = false;

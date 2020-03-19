@@ -157,6 +157,11 @@ p {
   overflow-x: visible !important;
 }
 
+#idea-space-header-div {
+  height: 30px !important;
+  margin-bottom: 0px;
+}
+
 #btn-filter-annotations {
   width: 100%;
 }
@@ -217,9 +222,9 @@ p {
   border-color: #f0f4c3;
   padding-right: 10px;
   padding-left: 10px;
-  margin-top: 10px;
   margin-bottom: 10px;
-
+  line-height: 150%;
+  overflow-y: hidden !important;
 }
 
 .card-annotation {
@@ -373,6 +378,7 @@ p {
 .card-content {
   overflow-y: hidden !important;
   padding-top: 10px !important;
+  height: 100%;
 }
 
 #annotation-results-information-section {
@@ -524,4 +530,48 @@ p {
   margin-left: -50px;
   padding-left:15px;
   cursor: pointer;
+}
+
+.fixed-action-btn {
+  position: relative !important;
+  margin-top: 15px !important;
+}
+
+.btn-perfect-size {
+  line-height: 57px !important;
+  width: 45px !important;
+  height: 45px !important;
+  margin-left: -20px;
+}
+
+/*
+if FAB is set to left
+#last-option-item {
+  margin-right: -25px !important;
+}
+*/
+/*
+if FAB is set to bottom
+*/
+#last-option-item {
+  margin-top: -10px !important;
+}
+#menu-action-btn li {
+  margin-left: -15px !important;
+}
+/*
+end of css block
+*/
+
+#idea-space-title {
+  margin-left:15px;
+  font-size: 18px;
+}
+
+#pagination-container > .row:first-child {
+  margin-bottom: 0px !important;
+}
+
+#menu-action-btn {
+  padding-bottom: 0px;
 }

@@ -1,13 +1,26 @@
 <div id="idea-space-opener-container">
-  <div class="row">
-     <div class="col m9 offset-m1">
+  <div id="idea-space-header-div" class="row">
+     <div class="col m10">
        <!--"Name of Idea Space" dynamically filled-->
-       <h6>Name Of Idea Space</h6>
+       <span id="idea-space-title" contenteditable="false">Name Of Idea Space</span>
      </div>
-     <div class="col m2">
+     <div class="col m1 offset-m1">
+       <div id="menu-action-btn" class="fixed-action-btn click-to-toggle">
+          <a class="btn-floating btn-perfect-size red">
+            <i class="medium material-icons">menu</i>
+          </a>
+          <ul>
+            <li><a id="btn-rename-idea-space" class="btn-floating red tooltipped-menu-options" data-position="left" data-tooltip="Rename Idea Space"><i class="material-icons">edit</i></a></li>
+            <li><a class="btn-floating yellow darken-1 tooltipped-menu-options" data-position="left" data-tooltip="Delete"><i class="material-icons">delete</i></a></li>
+            <li><a class="btn-floating green tooltipped-menu-options" data-position="left" data-tooltip="Share"><i class="material-icons">people</i></a></li>
+            <li id="last-option-item" ><a id="btn-return-to-idea-spaces" class="btn-floating blue tooltipped-menu-options" data-position="left" data-tooltip="Back"><i class="material-icons">arrow_forward</i></a></li>
+          </ul>
+        </div>
+      <!--
        <div id="btn-return-to-idea-spaces">
          <i class="material-icons">arrow_forward</i>
        </div>
+       -->
      </div>
   </div>
   <div clas="row">
@@ -242,7 +255,7 @@
 
     <div class="carousel carousel-slider">
       <div class="carousel-item" href="#one!">
-        <div class="container-for-all-annotation-cards" style="margin-top: 30px !important;">
+        <div class="container-for-all-annotation-cards" style="margin-top: 10px !important;">
           <%- include('annotation-card.ejs'); %>
           <%- include('annotation-card.ejs'); %>
           <%- include('annotation-card.ejs'); %>

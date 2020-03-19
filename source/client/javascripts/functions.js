@@ -14,6 +14,39 @@ var save = function() {
   //$(".click2edit").modal("hide");
 };
 
+function placeCaretAtEnd(el) {
+    el.focus();
+    if (typeof window.getSelection != "undefined"
+            && typeof document.createRange != "undefined") {
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        range.collapse(false);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+    } else if (typeof document.body.createTextRange != "undefined") {
+        var textRange = document.body.createTextRange();
+        textRange.moveToElementText(el);
+        textRange.collapse(false);
+        textRange.select();
+    }
+
+    window.setTimeout(function() {
+        var sel, range;
+        if (window.getSelection && document.createRange) {
+            range = document.createRange();
+            range.selectNodeContents(el);
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        } else if (document.body.createTextRange) {
+            range = document.body.createTextRange();
+            range.moveToElementText(el);
+            range.select();
+        }
+    }, 1);
+}
+
 
 $('.my-materialnote-containers').click(function(){
   if(!MATERIALNOTEOPEN){//if users hasn't already started to edit other text they can edit this specific piece of text
