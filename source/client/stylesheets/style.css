@@ -1,3 +1,4 @@
+
 body {
   overflow-y: hidden;
   font-family: sans-serif;
@@ -414,6 +415,8 @@ p {
 
 .save-materialnote {
   display:none;
+  position: relative;
+  z-index: 5 !important;
 }
 
 .filtering-options-container {
@@ -564,8 +567,13 @@ end of css block
 */
 
 #idea-space-title {
+  padding-bottom: 10px;
   margin-left:15px;
   font-size: 18px;
+  max-width: 90%;
+  white-space: nowrap;
+
+  overflow-y: scroll;
 }
 
 #pagination-container > .row:first-child {
@@ -574,4 +582,35 @@ end of css block
 
 #menu-action-btn {
   padding-bottom: 0px;
+}
+
+.pagination li.active {
+    background-color: #ba68c8 !important;/* purple lighten-2 */
+}
+
+.note-editor {
+  z-index: 1 !important;
+}
+
+.idea-space-menu-options {
+  display: none;
+  height: 100%;
+  padding-top: 40%;
+}
+
+#deleted-idea-space-name {
+
+}
+
+#delete-idea-space-div {
+  display: none;
+}
+
+.row-no-bottom-margin {
+  margin-bottom: 0px !important
+}
+
+#btn-rename-idea-space-confirmation-container {
+  margin-top: -30px !important;
+  height: 30px;
 }

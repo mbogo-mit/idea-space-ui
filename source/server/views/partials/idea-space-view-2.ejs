@@ -2,7 +2,7 @@
   <div id="idea-space-header-div" class="row">
      <div class="col m10">
        <!--"Name of Idea Space" dynamically filled-->
-       <span id="idea-space-title" contenteditable="false">Name Of Idea Space</span>
+       <div id="idea-space-title" contenteditable="false">Name Of Idea Space</div>
      </div>
      <div class="col m1 offset-m1">
        <div id="menu-action-btn" class="fixed-action-btn click-to-toggle">
@@ -11,8 +11,8 @@
           </a>
           <ul>
             <li><a id="btn-rename-idea-space" class="btn-floating red tooltipped-menu-options" data-position="left" data-tooltip="Rename Idea Space"><i class="material-icons">edit</i></a></li>
-            <li><a class="btn-floating yellow darken-1 tooltipped-menu-options" data-position="left" data-tooltip="Delete"><i class="material-icons">delete</i></a></li>
-            <li><a class="btn-floating green tooltipped-menu-options" data-position="left" data-tooltip="Share"><i class="material-icons">people</i></a></li>
+            <li><a id="btn-delete-idea-space" class="btn-floating yellow darken-1 tooltipped-menu-options" data-position="left" data-tooltip="Delete"><i class="material-icons">delete</i></a></li>
+            <li><a id="btn-share-idea-space" class="btn-floating green tooltipped-menu-options" data-position="left" data-tooltip="Share"><i class="material-icons">people</i></a></li>
             <li id="last-option-item" ><a id="btn-return-to-idea-spaces" class="btn-floating blue tooltipped-menu-options" data-position="left" data-tooltip="Back"><i class="material-icons">arrow_forward</i></a></li>
           </ul>
         </div>
@@ -25,7 +25,7 @@
   </div>
   <div clas="row">
     <div class="col m12 center-align">
-      <a id="btn-filter-annotations" class="waves-effect waves-light btn"><i class="material-icons left">filter_list</i>Annotation Filters</a>
+      <a id="btn-filter-annotations" class="waves-effect waves-light btn color-scheme-level-1"><i class="material-icons left">filter_list</i>Annotation Filters</a>
     </div>
 
   </div>
@@ -315,4 +315,132 @@
     </div>
 
   </div>
+</div>
+<div id="idea-space-delete-container" class="idea-space-menu-options">
+  <div id="delete-idea-space-div">
+    <div class="row row-no-bottom-margin">
+      <div class="col m12 center">
+        <h4 id="deleted-idea-space-name">Deleting "Name of Idea Space"</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m12 center">
+
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-red-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="delete-idea-space-confirmation">
+    <div class="row row-no-bottom-margin">
+      <div class="col m12 center">
+        <h4>Are you sure you want to delete "Name of Idea Space"?</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m12 center">
+        <a id="btn-delete-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">delete</i>Delete</a>
+        <a id="btn-dont-delete-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancel</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div id="idea-space-share-container" class="idea-space-menu-options">
+  <div id="update-share-idea-space-div">
+    <div class="row row-no-bottom-margin">
+      <div class="col m12 center">
+        <h4 id="update-share-idea-space-name">Sharing "Name of Idea Space"</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m12 center">
+
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-red-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="update-share-idea-space-confirmation">
+    <div class="row row-no-bottom-margin">
+      <div class="col m12">
+        <h4>Shared With...</h4>
+      </div>
+    </div>
+    <div class="row row-no-bottom-margin">
+      <div class="col m12">
+        <div class="chips .chips-autocomplete-share-idea-space"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m12">
+        <a id="btn-share-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">sync</i>Update</a>
+        <a id="btn-dont-share-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancel</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div id="idea-space-rename-container" class="idea-space-menu-options">
+  <div id="rename-idea-space-div">
+    <div class="row row-no-bottom-margin">
+      <div class="col m12 center">
+        <h4 id="rename-idea-space-name">Renaming "Name of Idea Space"</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m12 center">
+
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-red-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="rename-idea-space-confirmation">
+    <div class="row row-no-bottom-margin">
+      <div class="col m12">
+        <div class="input-field">
+          <input id="first_name" type="text" class="validate" value="Name Of Idea Space">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m12">
+        <a id="btn-rename-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Rename</a>
+        <a id="btn-dont-rename-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancel</a>
+      </div>
+    </div>
+  </div>
+
 </div>

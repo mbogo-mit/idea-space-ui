@@ -22,6 +22,7 @@ $( document ).ready(function() {
       placeholder: 'Group Name',
       secondaryPlaceholder: '+Group',
     });
+
     $('.chips-autocomplete').chips({
       autocompleteOptions: {
         data: {
@@ -33,6 +34,21 @@ $( document ).ready(function() {
         minLength: 1
       }
     });
+
+    $('.chips-autocomplete-share-idea-space').chips({
+      placeholder: 'Enter a Group',
+      secondaryPlaceholder: '+Group',
+      autocompleteOptions: {
+        data: {
+          'Apple': null,
+          'Microsoft': null,
+          'Google': null
+        },
+        limit: Infinity,
+        minLength: 1
+      }
+    });
+
     $('#input-group-name').autocomplete({
       data: {
         "Group 1": null,
@@ -50,6 +66,10 @@ $( document ).ready(function() {
       enterDelay: 1000,
       html: "<p id='tooltip-create-ideaspace'>Create IdeaSpace</p>"
     });
+
+
+
+    //end of InitMaterializeComponents-----------------------------
   }
 
   function InitEventListeners() {
@@ -157,23 +177,6 @@ $( document ).ready(function() {
       }, 1000);
     });
 
-    $("#btn-rename-idea-space").click(function(){
-      $("#idea-space-title").attr("contenteditable","true");
-      placeCaretAtEnd($('#idea-space-title').get(0));
-      IDEASPACETITLEFOCUSED = true;
-    });
-
-    $(document).on('keypress',function(e) {
-      if(IDEASPACETITLEFOCUSED){
-        if(e.which == 13) {
-            $("#idea-space-title").attr("contenteditable","false");
-            document.getSelection().removeAllRanges();
-            IDEASPACETITLEFOCUSED = false;
-        }
-      }
-
-    });
-
 
   $("#paper-outline-container").scroll(function(){
     $("#paper-outline-container-contextmenu").css({top: "-200px", left:"-200px"});
@@ -252,7 +255,7 @@ $( document ).ready(function() {
 
 
     $(".btn-collapse-block").hover(function(){
-      $(this).css('color', '#4db6ac');
+      $(this).css('color', COLORSCHEMELEVEL1);
       console.log("btn-collapse-block hover!");
     },function(){
       $(this).css('color', 'black');
@@ -429,15 +432,126 @@ $( document ).ready(function() {
 
 
     });
+
+    $('.my-materialnote-containers').click(function(){
+      if(!MATERIALNOTEOPEN){//if users hasn't already started to edit other text they can edit this specific piece of text
+        $(this).next().css("display","block");
+        $(this).materialnote({focus: true});
+        $('.save-materialnote').css("top", (-1 * $(".note-editor").height() + 35) + "px");
+        $('.save-materialnote').css("left", ($(".note-editor").width() - 64) + "px");
+        MATERIALNOTEOPEN = true;
+      }
+    });
+
+    $('.save-materialnote').click(function(){
+      //$(this).prev().prev().destroy();
+      $('.my-materialnote-containers').destroy();
+      $(this).css("display","none");
+      MATERIALNOTEOPEN = false;
+
+      //we have to add the click event listener back to the block-note
+      $('.my-materialnote-containers').click(function(){
+        if(!MATERIALNOTEOPEN){//if users hasn't already started to edit other text they can edit this specific piece of text
+          $(this).next().css("display","block");
+          $(this).materialnote({focus: true});
+          MATERIALNOTEOPEN = true;
+        }
+      });
+
+    });
+
+    $(".save-materialnote").hover(function(){
+      $(this).removeClass("lighten-1");
+      $(this).addClass("lighten-2");
+    },function(){
+      $(this).addClass("lighten-1");
+      $(this).removeClass("lighten-2");
+    });
+
+    $("#btn-share-idea-space").click(function(){
+      $("#idea-space-opener-container").css("display","none");
+      $("#idea-space-share-container").css("display","block");
+      //making the correct elements inside the delete view viewable
+      $("#update-share-idea-space-confirmation").css("display","block");
+      $("#update-share-idea-space-div").css("display","none");
+    });
+
+    $("#btn-share-idea-space-confirmation").click(function(){
+      $("#update-share-idea-space-confirmation").css("display","none");
+      $("#update-share-idea-space-div").css("display","block");
+      setTimeout(function(){
+        $("#btn-dont-share-idea-space-confirmation").trigger("click");
+      });
+    });
+
+    $("#btn-rename-idea-space").click(function(){
+      $("#idea-space-opener-container").css("display","none");
+      $("#idea-space-rename-container").css("display","block");
+      //making the correct elements inside the delete view viewable
+      $("#rename-idea-space-confirmation").css("display","block");
+      $("#rename-idea-space-div").css("display","none");
+    });
+
+    $("#btn-rename-idea-space-confirmation").click(function(){
+      $("#rename-idea-space-confirmation").css("display","none");
+      $("#rename-idea-space-div").css("display","block");
+      setTimeout(function(){
+        $("#btn-dont-rename-idea-space-confirmation").trigger("click");
+      },3000);
+    });
+
+    $("#btn-delete-idea-space").click(function(){
+      $("#idea-space-opener-container").css("display","none");
+      $("#idea-space-delete-container").css("display","block");
+      //making the correct elements inside the delete view viewable
+      $("#delete-idea-space-confirmation").css("display","block");
+      $("#delete-idea-space-div").css("display","none");
+    });
+
+    $("#btn-delete-idea-space-confirmation").click(function(){
+      $("#delete-idea-space-confirmation").css("display","none");
+      $("#delete-idea-space-div").css("display","block");
+      setTimeout(function(){
+        $("#btn-return-to-idea-spaces").trigger("click");
+        setTimeout(function(){
+          $("#btn-dont-delete-idea-space-confirmation").trigger("click");
+        },3000);
+
+      }, 3000);
+
+    });
+
+    $("#btn-dont-delete-idea-space-confirmation").click(function(){
+      $("#idea-space-opener-container").css("display","block");
+      $("#idea-space-delete-container").css("display","none");
+    });
+
+    $("#btn-dont-share-idea-space-confirmation").click(function(){
+      $("#idea-space-opener-container").css("display","block");
+      $("#idea-space-share-container").css("display","none");
+    });
+
+    $("#btn-dont-rename-idea-space-confirmation").click(function(){
+      $("#idea-space-opener-container").css("display","block");
+      $("#idea-space-rename-container").css("display","none");
+    });
+
+    //end of InitEventListeners--------------------------------
   }
 
   function InitIntroJSRelatedEventListeners(){
     $("#btn-settings-help").click(function(){
       introJs().start();
     });
+
+    //end of InitIntroJSRelatedEventListeners--------------------------------
   }
 
   function SettingCSSWithJavascript(){
+
+    $(".color-scheme-level-1").addClass('purple');
+    $(".color-scheme-level-1").addClass('lighten-1');
+
     $("#slide-out-nav-bar").width($("#idea-space-col-container").width() + 20);
 
     $("#outline-container").height($(window).height() - $("#my-nav-wrapper").height() - 70);
@@ -472,6 +586,9 @@ $( document ).ready(function() {
     };
 
     $("#pre-tag-json").html(JSON.stringify(myjson,undefined,4));
+
+
+    //end of SettingCSSWithJavascript--------------------------------
   }
 
   function InitInteractJsEventListeners(){
@@ -507,9 +624,13 @@ $( document ).ready(function() {
         }
       }
     });
+
+
+
+    //end of InitInteractJsEventListeners--------------------------------
   }
 
-  //initializing all code 
+  //initializing all code
   InitMaterializeComponents();
   InitEventListeners();
   InitIntroJSRelatedEventListeners();

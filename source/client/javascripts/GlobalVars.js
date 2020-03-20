@@ -25,3 +25,5 @@ var MATERIALNOTEOPEN = false;
 
 //For Idea Space Title functionality
 IDEASPACETITLEFOCUSED = false;
+
+COLORSCHEMELEVEL1 = '#9c27b0';

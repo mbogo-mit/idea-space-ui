@@ -47,29 +47,6 @@ function placeCaretAtEnd(el) {
     }, 1);
 }
 
-
-$('.my-materialnote-containers').click(function(){
-  if(!MATERIALNOTEOPEN){//if users hasn't already started to edit other text they can edit this specific piece of text
-    $(this).next().css("display","block");
-    $(this).materialnote({focus: true});
-    MATERIALNOTEOPEN = true;
-  }
-});
-
-$('.save-materialnote').click(function(){
-  var h;
-  /*
-  $(this).prev().children('.note-editable').each(function(index){
-    console.log($(this));
-    h = $(this).height();
-  });*/
-  var h = $(this).prev().children('.note-editable').height() - 60;
-  $(this).prev().prev().destroy();
-  $(this).prev().prev().height(h);
-  $(this).css("display","none");
-  MATERIALNOTEOPEN = false;
-});
-
 var ID = function () {
   // Math.random should be unique because of its seeding algorithm.
   // Convert it to base 36 (numbers + letters), and grab the first 9 characters
