@@ -286,12 +286,16 @@ function LeftContainerHovered(){
   $("#right-container").css("width","33%");
   $("#right-container").css("left","67%");
 
+  /*
+
   $(".annotation-card-container").each(function(){
     if(!$(this).hasClass("annotation-card-expanded")){
       $(this).removeClass("m12");
       $(this).addClass("m6");
     }
   });
+
+  */
 
   //making filter options proper size
   $("#text-filter-status").removeClass("m12");
@@ -318,10 +322,12 @@ function RightContainerHovered(){
     $("#right-container").css("width","67%");
     $("#right-container").css("left","33%");
 
+    /*
     $(".annotation-card-container").each(function(){
       $(this).removeClass("m6");
       $(this).addClass("m12");
     });
+    */
 
     //making filter options proper size
     $("#text-filter-status").removeClass("m7");

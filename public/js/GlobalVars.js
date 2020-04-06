@@ -79,8 +79,8 @@ var MaxValueOfCharsForBlockHeader = 40;
 
 var UpdateInterval = null;
 var UpdateIntervalSet = false;
-var ToolbarBtnSelectedColor = "#00695c";
-var ToolbarBtnDefaultColor = "#212121";
+var ToolbarBtnSelectedColor = "#f64c72";
+var ToolbarBtnDefaultColor = "#f5f5f5";
 var ToolbarState = {
   bold: false,
   italic: false,

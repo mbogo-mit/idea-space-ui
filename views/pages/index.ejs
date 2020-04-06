@@ -22,7 +22,13 @@
         </div>
 
         <div id="right-container">
-          <a id="btn-change-size-of-container" class="facing-left btn-floating btn waves-effect waves-light red"><i class="material-icons">expand_more</i></a>
+          <span id="dynamic-size-container">
+            <div id="background-semicircle"></div>
+            <a id="btn-change-size-of-container" class="facing-left btn-floating btn waves-effect waves-light red">
+              <i class="material-icons">expand_more</i>
+            </a>
+          </span>
+
           <div id="right-second-container">
             <%- include('../partials/ideaspaces.ejs');  %>
             <%- include('../partials/ideaspace.ejs');  %>

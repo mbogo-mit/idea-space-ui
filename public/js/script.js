@@ -255,7 +255,9 @@ $( document ).ready(function() {
         $(this).html("expand_more");
         p.removeClass("annotation-card-expanded");
 
+        /*
         if(LeftPanelExpanded){
+
           p.addClass("m6");
           p.removeClass("m12");
         }
@@ -263,6 +265,7 @@ $( document ).ready(function() {
           p.removeClass("m6");
           p.addClass("m12");
         }
+        */
 
 
         p.find('.annotation-extra-info').animate({height: 0}, 500);
@@ -274,6 +277,7 @@ $( document ).ready(function() {
       else{
         $(this).html("expand_less");
 
+        /*
         if(LeftPanelExpanded){
           p.removeClass("m6");
           p.addClass("m12");
@@ -282,7 +286,7 @@ $( document ).ready(function() {
           p.removeClass("m6");
           p.addClass("m12");
         }
-
+        */
 
         p.addClass("annotation-card-expanded");
 
@@ -576,10 +580,10 @@ $( document ).ready(function() {
 
 
     $(".btn-collapse-block").hover(function(){
-      $(this).css('color', COLORSCHEMELEVEL1);
+      $(this).css('color', "ToolbarBtnSelectedColor");
       console.log("btn-collapse-block hover!");
     },function(){
-      $(this).css('color', 'black');
+      $(this).css('color', "#2f2fa2");
       console.log("btn-collapse-block hover out!");
     });
 
@@ -1010,10 +1014,12 @@ $( document ).ready(function() {
       $("#right-container").css("width","67%");
       $("#right-container").css("left","33%");
 
+      /*
       $(".annotation-card-container").each(function(){
         $(this).removeClass("m6");
         $(this).addClass("m12");
       });
+      */
 
       //making filter options proper size
       $("#text-filter-status").removeClass("m7");
@@ -1047,10 +1053,12 @@ $( document ).ready(function() {
       $("#right-container").css("width","33%");
       $("#right-container").css("left","67%");
 
+      /*
       $(".annotation-card-container").each(function(){
         $(this).removeClass("m12");
         $(this).addClass("m6");
       });
+      */
 
       //making filter options proper size
       $("#text-filter-status").removeClass("m12");

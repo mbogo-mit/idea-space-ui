@@ -70,9 +70,14 @@
 
 #main-materialnote-container .note-editor .btn {
   background-color: #f5f5f5;
-  color: #242582 !important;
+  color: #242582;
 }
 
 #main-materialnote-container .note-editor div[data-event='color'] {
-  background-color: white !important;
+  background-color: white;
+  color: black;
+}
+
+#main-materialnote-container .note-toolbar .btn:hover {
+  background-color: #fcaebf !important;
 }

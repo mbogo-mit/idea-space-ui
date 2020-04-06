@@ -125,6 +125,9 @@ body {
   color: black;
   z-index: 1;
   width: 100%;
+  font-family: 'Kalam', cursive;
+  /*font-family: 'Amatic SC', cursive;
+  font-size: 26px;*/
 }
 
 #text-filter-status {
@@ -423,15 +426,23 @@ body {
 }
 */
 
-#btn-change-size-of-container {
+#dynamic-size-container {
   position: relative;
   margin-bottom: -20px !important;
-  left: -19px;
-  top: 350px;
+  left: -61px;
+  top: 307px;
+  z-index: 10;
+}
+
+#btn-change-size-of-container {
+  position: relative;
+  /*margin-bottom: -20px !important;*/
+  left: -1px;
+  top: 0px;
   z-index: 10;
   transform: rotate(90deg);
   background-color: white !important;
-  border-bottom: solid 1px #242582;
+  /*border-bottom: solid 1px #242582;*/
   box-shadow: none;
 
 }
@@ -442,6 +453,7 @@ body {
 
 #btn-open-annotations-filters-for-ideaspace {
   border-radius: 0px !important;
+  font-family: 'Kalam', cursive;
   box-shadow: none;
   color: black;
   z-index: 1;
@@ -477,6 +489,10 @@ body {
   margin-bottom: 0px;
   position: relative;
   top: -10px;
+}
+
+.checkbox-filter-name {
+  font-family: 'Kalam', cursive;
 }
 
 .carousel-item {
@@ -524,9 +540,11 @@ body {
   overflow-y: scroll;
 }
 
+/*
 p {
   font-family: sans-serif !important;
 }
+*/
 
 .ideaSpace-logo {
   margin-left: 15px;
@@ -659,7 +677,8 @@ p {
 }
 
 .tag-badge, .new-outline-badge{
-  background-color: #99738e !important;
+  /*background-color: #99738e !important;*/
+  background-color: #ffc4a5 !important;
 }
 
 #nav-mobile {
@@ -768,7 +787,8 @@ p {
   border-radius: 5px;
   border-style: solid;
   border-width: 0px 0px 0px 4px;
-  border-color: #f0f4c3;
+  /*border-color: #f0f4c3;*/
+  border-color: #e39ef1;
   padding-right: 10px;
   padding-left: 10px;
   margin-bottom: 10px;
@@ -782,7 +802,8 @@ p {
 }
 
 .card-annotation {
-  font-family: Arial, Helvetica, sans-serif;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  font-family: 'Kalam', cursive;
   font-size: 14px;
 }
 
@@ -822,6 +843,7 @@ p {
 .meta-data-chips {
   margin-right:0px !important;
   cursor: pointer;
+  background-color: #eeeeee;
   transition: background-color 500ms;
 }
 
@@ -903,23 +925,33 @@ p {
   border-width: 0px 0px 0px 4px;
 }
 .block-card-level-1 {
-  border-color: #c5cae9;
+  /*border-color: #c5cae9;*/
+  border-color: #b2a8f2;
 }
 
 .block-card-level-2 {
-  border-color: #f8bbd0;
+  /*border-color: #f8bbd0;*/
+  border-color: #fca3b6;
 }
 
 .block-card-level-3 {
-  border-color: #bbdefb;
+  /*border-color: #bbdefb;*/
+  border-color: #9cf1d7;
 }
 
 .block-card-level-4 {
-  border-color: #b2dfdb;
+  /*border-color: #b2dfdb;*/
+  border-color: #ffc4a5;
 }
 
 .block-card-level-5 {
-  border-color: #c8e6c9;
+  /*border-color: #c8e6c9;*/
+  border-color: #ffea4f;
+}
+
+.block-card-level-6 {
+  /*border-color: #c8e6c9;*/
+  border-color: #c0faa1;
 }
 
 .interact-draggable {
@@ -1000,6 +1032,7 @@ p {
 .btn-collapse-block {
   visibility: hidden;
   transform: rotate(180deg);
+  color: #2f2fa2;
 }
 
 .icon-color-btn-collapse-block {
@@ -1125,8 +1158,17 @@ if FAB is set to bottom
   background-color: #f64c72 !important;
 }
 
+#my-brand-logo {
+  font-family: 'Satisfy', cursive;
+  font-size: 2.2rem;
+}
+
 .collapsible-header {
   transition: all 0.5s;
+  font-family: 'Kalam', cursive;
+  font-weight: lighter;
+  font-size: 20px;
+  padding: 0.6rem;
 }
 
 .collapsible-header:hover {
@@ -1439,4 +1481,36 @@ end of css block
   float: right;
   padding-bottom: 5px;
   color: #242582;
+}
+
+
+#background-semicircle {
+  position: relative;
+  left: 39px;
+  top: 33px;
+  z-index: 8;
+  background: #242582;
+  display: inline-block;
+  margin: 0 1em 1em 0;
+  height: calc(22px * 2);
+  width: 22px;
+  border-bottom-left-radius: calc(22px * 2);
+  border-top-left-radius: calc(22px * 2);
+}
+
+
+#annotated-by-filter-container-organizer .meta-data-chips {
+  border-bottom: solid 2px #84ef4a;
+}
+#by-group-filter-container-organizer .meta-data-chips {
+  border-bottom: solid 2px #42d6aa;
+}
+#by-document-filter-container-organizer .meta-data-chips {
+  border-bottom: solid 2px #f64c71;
+}
+#by-tags-filter-container-organizer .meta-data-chips {
+  border-bottom: solid 2px #ff8c4f;
+}
+#by-date-filter-container-organizer .meta-data-chips {
+  border-bottom: solid 2px #ffea4f;
 }
