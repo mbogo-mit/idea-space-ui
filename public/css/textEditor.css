@@ -1,0 +1,59 @@
+.interact-draggable div[data-event='bold'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='italic'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='underline'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='strikethrough'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='superscript'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='subscript'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='insertUnorderedList'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='insertOrderedList'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='justifyLeft'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='justifyCenter'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='justifyRight'] {
+  transition: none;
+}
+
+.interact-draggable div[data-event='justifyFull'] {
+  transition: none;
+}
+
+.interact-draggable .note-toolbar.btn-toolbar {
+  display: none !important;
+}
+
+.interact-draggable .note-editor {
+  border: 1px solid #039be5 !important;
+}
+
+#main-materialnote-container .note-editable {
+  display: none;
+}

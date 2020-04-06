@@ -1,0 +1,96 @@
+<div id="outlines-view-2">
+  <!--
+  <nav style="box-shadow: none;">
+    <div id="paper-outline-nav-wrapper" class="nav-wrapper white">
+      <ul id="nav-outline-view" class="hide-on-med-and-down">
+        <li id="back-to-outlines"><i class="material-icons left">arrow_backward</i></li>
+        <li id="btn-overview"><a class="black-text">Overview</a></li>
+        <li id="btn-write" class="active"><a class="black-text">Write</a></li>
+      </ul>
+      <a id="btn-export" class="white-text btn modal-trigger right color-scheme-level-1" href="#modalExport">Export</a>
+    </div>
+  </nav>
+  -->
+    <!-- Modal Structure -->
+    <div id="modalExport" class="modal">
+      <div class="modal-content">
+
+        <div class="row">
+          <div class="col s12">
+            <ul class="tabs">
+              <li id="docx-tab" class="tab col s3"><a class="active" href="#tab-docx-container">Docx</a></li>
+              <li id="pdf-tab" class="tab col s3"><a href="#tab-pdf-container">PDF</a></li>
+              <li id="html-tab" class="tab col s3"><a href="#tab-html-container">HTML</a></li>
+              <li id="json-tab" class="tab col s3"><a href="#tab-json-container">JSON</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="export-container">
+          <div class="row">
+            <div id="tab-docx-container" class="col s12">
+
+              <%- include('outline-docx-export.ejs'); %>
+
+            </div>
+            <div id="tab-pdf-container" class="col s12">
+
+              <%- include('outline-pdf-export.ejs'); %>
+
+            </div>
+            <div id="tab-html-container" class="col s12">
+
+              <%- include('outline-html-export.ejs'); %>
+
+            </div>
+            <div id="tab-json-container" class="col s12">
+              <%- include('outline-json-export.ejs'); %>
+            </div>
+          </div>
+        </div>
+
+        <div id="btn-export-as-row" class="row">
+          <div class="col s12">
+            <a id="btn-export-as" href="#!" class="modal-close waves-effect waves-green btn">Export DOCX</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  <div class="row my-row">
+    <div class="col m12 my-col">
+      <%- include('paper-outline-container.ejs'); %>
+    </div>
+  </div>
+
+
+</div>
+
+<div id="InjectableBtn" style="display:none;">
+
+  <div class="note-style btn-group">
+    <div id="back-to-outlines" class="waves-effect waves-light btn" data-event="go-back" tabindex="-1" data-name="back" data-tooltip="Go Back" data-position="bottom">
+      <i class="material-icons toolbar-item-icon">arrow_back</i>
+      <span style="margin-left:5px;margin-right:0px;" class="toolbar-item">Back</span>
+    </div>
+    <div class="waves-effect waves-light btn" data-event="insert" tabindex="-1" data-name="Insert" data-tooltip="Insert Section/Note" data-position="bottom">
+      <span class="toolbar-item">Insert</span>
+      <i class="material-icons toolbar-item-icon">expand_more</i>
+    </div>
+    <ul id="dropdown-for-toolbar-insert" class="note-check">
+      <li>
+        <div data-event="insertSection" href="#"><i class="material-icons tiny">assignment</i>Section</div>
+        <div data-event="insertNote" href="#"><i class="material-icons tiny">note_add</i>Note</div>
+      </li>
+    </ul>
+    <div class="waves-effect waves-light btn" data-event="save" tabindex="-1" data-name="Save" data-tooltip="Underline (⌘+U)" data-position="bottom">
+      <span class="toolbar-item">Saving...</span>
+      <i id="save-toolbar-icon" class="material-icons toolbar-item-icon">save</i>
+    </div>
+    <div id="btn-export" href="#modalExport" class="waves-effect waves-light btn modal-trigger" data-event="export" tabindex="-1" data-name="export" data-tooltip="" data-position="bottom">
+      <span class="toolbar-item">Export</span>
+      <i class="material-icons toolbar-item-icon">archive</i>
+    </div>
+  </div>
+
+</div>

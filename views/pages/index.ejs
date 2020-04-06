@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <%- include('../partials/head.ejs');%>
+  </head>
+  <body>
+
+    <%- include('../partials/nav.ejs');  %>
+
+    <div class="row">
+      <div id="my-container">
+
+        <div id="left-container">
+          <div id="outlines">
+            <%- include('../partials/outline-view-1.ejs');  %>
+            <%- include('../partials/outline-view-2.ejs');  %>
+          </div>
+          <div id="annotations">
+            <%- include('../partials/annotations-header.ejs');  %>
+            <%- include('../partials/annotations-body.ejs');  %>
+          </div>
+        </div>
+
+        <div id="right-container">
+          <a id="btn-change-size-of-container" class="facing-left btn-floating btn waves-effect waves-light red"><i class="material-icons">expand_more</i></a>
+          <div id="right-second-container">
+            <%- include('../partials/ideaspaces.ejs');  %>
+            <%- include('../partials/ideaspace.ejs');  %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <%- include('../partials/context-menu.ejs'); %>
+
+    <!-- Custtom Js Script -->
+    <script type="text/javascript" src="js/GlobalVars.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/SocketClient.js"></script>
+    <script type="text/javascript" src="js/textEditor.js"></script>
+
+  </body>
+</html>

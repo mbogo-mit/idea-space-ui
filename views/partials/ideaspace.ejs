@@ -1,0 +1,997 @@
+<div id="ideaspace">
+  <div id="idea-space-opener-container">
+    <div id="idea-space-header-div" class="row">
+       <div class="col m10">
+         <!--"Name of Idea Space" dynamically filled-->
+         <div id="idea-space-title" contenteditable="false">Name Of Idea Space</div>
+       </div>
+       <div class="col m1 offset-m1">
+         <div id="menu-action-btn" class="fixed-action-btn click-to-toggle">
+            <a class="btn-floating btn-perfect-size red">
+              <i class="medium material-icons">menu</i>
+            </a>
+            <ul>
+              <li><a id="btn-rename-idea-space" class="btn-floating red tooltipped-menu-options" data-position="left" data-tooltip="Rename Idea Space"><i class="material-icons">edit</i></a></li>
+              <li><a id="btn-delete-idea-space" class="btn-floating yellow darken-1 tooltipped-menu-options" data-position="left" data-tooltip="Delete"><i class="material-icons">delete</i></a></li>
+              <li><a id="btn-share-idea-space" class="btn-floating green tooltipped-menu-options" data-position="left" data-tooltip="Share"><i class="material-icons">people</i></a></li>
+              <li id="last-option-item" ><a id="btn-return-to-idea-spaces" class="btn-floating blue tooltipped-menu-options" data-position="left" data-tooltip="Back"><i class="material-icons">arrow_forward</i></a></li>
+            </ul>
+          </div>
+        <!--
+         <div id="btn-return-to-idea-spaces">
+           <i class="material-icons">arrow_forward</i>
+         </div>
+         -->
+       </div>
+    </div>
+    <div id="row-annotation-filters-for-ideaspace" class="row">
+      <div id="btn-open-annotations-filters-container-for-ideaspace" class="col m12">
+        <a id="btn-open-annotations-filters-for-ideaspace" class="waves-effect waves-light btn grey lighten-2 dropdown-trigger" data-target="annotation-filter-options"><i id="filter-annotation-icon-for-ideaspace" class="material-icons left">expand_more</i>Filter Annotations</a>
+        <div id="annotations-filter-options-for-ideaspace">
+          <ul class="collapsible">
+              <li>
+                <div class="collapsible-header"><i class="material-icons">format_quote</i>Annotated By</div>
+                <div class="collapsible-body filter-collapsible-body">
+                  <div class="filter-options-collapsible-body">
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-annotated-by-filter" type="checkbox" />
+                      <span>John Boy</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-annotated-by-filter" type="checkbox" />
+                      <span>Sam Smith</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-annotated-by-filter" type="checkbox" />
+                      <span>Fredrick Douglas</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-annotated-by-filter" type="checkbox" />
+                      <span>James Brown</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-annotated-by-filter" type="checkbox" />
+                      <span>Lebron James</span>
+                    </label>
+                  </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">class</i>By Class</div>
+                <div class="collapsible-body filter-collapsible-body">
+                  <div class="filter-options-collapsible-body">
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-class-filter" type="checkbox" />
+                      <span>John Boy</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-class-filter" type="checkbox" />
+                      <span>Sam Smith</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-class-filter" type="checkbox" />
+                      <span>Fredrick Douglas</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-class-filter" type="checkbox" />
+                      <span>James Brown</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-class-filter" type="checkbox" />
+                      <span>Lebron James</span>
+                    </label>
+                  </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">assignment</i>By Document</div>
+                <div class="collapsible-body filter-collapsible-body">
+                  <div class="filter-options-collapsible-body">
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-document-filter" type="checkbox" />
+                      <span>John Boy</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-document-filter" type="checkbox" />
+                      <span>Sam Smith</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-document-filter" type="checkbox" />
+                      <span>Fredrick Douglas</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-document-filter" type="checkbox" />
+                      <span>James Brown</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-document-filter" type="checkbox" />
+                      <span>Lebron James</span>
+                    </label>
+                  </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">bookmark</i>By Tags</div>
+                <div class="collapsible-body filter-collapsible-body">
+                  <div class="filter-options-collapsible-body">
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-tags-filter" type="checkbox" />
+                      <span>John Boy</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-tags-filter" type="checkbox" />
+                      <span>Sam Smith</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-tags-filter" type="checkbox" />
+                      <span>Fredrick Douglas</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-tags-filter" type="checkbox" />
+                      <span>James Brown</span>
+                    </label>
+                  </p>
+                  <p class="filtering-options-container">
+                    <label>
+                      <input class="input-filter-checkbox-for-idea-space input-by-tags-filter" type="checkbox" />
+                      <span>Lebron James</span>
+                    </label>
+                  </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">event</i>By Date Created</div>
+                <div class="collapsible-body filter-collapsible-body">
+                  <div class="filter-options-collapsible-body">
+                  <div class="row">
+                    <div class="col m6">
+                      <input id="input-start-date-for-idea-space" type="text" class="datepicker">
+                      <label for="input-start-date-for-idea-space">Start Date</label>
+                    </div>
+                    <div class="col m6">
+                      <input id="input-end-date-for-idea-space" type="text" class="datepicker">
+                      <label for="input-end-date-for-idea-space">End Date</label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="row my-row">
+      <div id="chip-filter-container-for-ideaspace" class="col m12">
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document Name<i class="close material-icons meta-data-tag-icons">cancel</i></div>
+        </div>
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name<i class="close material-icons meta-data-tag-icons">cancel</i></div>
+        </div>
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1<i class="close material-icons meta-data-tag-icons">cancel</i></div>
+        </div>
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document Name<i class="close material-icons meta-data-tag-icons">cancel</i></div>
+        </div>
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name<i class="close material-icons meta-data-tag-icons">cancel</i></div>
+        </div>
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1<i class="close material-icons meta-data-tag-icons">cancel</i></div>
+        </div>
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">assignment</i>Document<i class="close material-icons meta-data-tag-icons">cancel</i></div>
+        </div>
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">group</i>Group Name<i class="close material-icons meta-data-tag-icons">cancel</i></div>
+        </div>
+        <div class="chip meta-data-chips">
+          <div class="annotation-meta-data"><i class="left material-icons meta-data-tag-icons">bookmark</i>Tag 1<i class="close material-icons">cancel</i></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="annotation-results-information-section">
+      <div id="annotation-results-container" class="row">
+        <div class="col m12 center-align grey-text darken-2">
+
+          <!-- #annotation-results-info
+               - dynamically created by looking at how many annotations fit the specifications of the query from the database
+          -->
+          <p id="annotation-results-info">Viewing 126 annotations from 3 documents, grouped by tag</p>
+
+        </div>
+        <div id="updating-filter-loader-container" class="col m12 s12 l12 center-align">
+          <div class="preloader-wrapper active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="ideaspace-annotation-results-container">
+
+        <!-- #pagination-container
+             - holds pagination tools to go through query once all the data is gathered pagination will happen on client side
+        -->
+        <div id="pagination-container">
+          <div class="row">
+            <div class="col m12 center-align">
+              <ul id="annotation-results-ul" class="pagination">
+                 <li id="chevron-left-pagination" class="disabled"><a href="#!"><i class="material-icons filter-pagination-icon">chevron_left</i></a></li>
+                 <li id="filter-pagination-1" class="active"><a class="filter-pagination-element" href="#!">1</a></li>
+                 <li id="filter-pagination-2" class=""><a class="filter-pagination-element" href="#!">2</a></li>
+                 <li id="filter-pagination-3" class=""><a class="filter-pagination-element" href="#!">3</a></li>
+                 <li id="filter-pagination-4" class=""><a class="filter-pagination-element" href="#!">4</a></li>
+                 <li id="filter-pagination-5" class=""><a class="filter-pagination-element" href="#!">5</a></li>
+                 <li id="filter-pagination-6" class=""><a class="filter-pagination-element" href="#!">6</a></li>
+                 <li id="filter-pagination-7" class=""><a class="filter-pagination-element" href="#!">7</a></li>
+                 <li id="chevron-right-pagination" class=""><a class="filter-pagination-element" href="#!"><i class="material-icons filter-pagination-icon">chevron_right</i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="annotation-carousel" class="carousel carousel-slider">
+          <div class="carousel-item" href="#one!">
+            <div class="container-for-all-annotation-cards">
+              <div id="unique-block-id-12dcsde13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+              <div id="unique-block-id-12dcsde13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+              <div id="unique-block-id-12dcsde13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+              <div id="unique-block-id-12dcsde13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+              <div id="unique-block-id-12dcsde13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+              <div id="unique-block-id-12dcsde13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+              <div id="unique-block-id-12dcsde13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" href="#two!">
+            <div class="container-for-all-annotation-cards">
+              <div id="unique-block-id-1213" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" href="#three!">
+            <div class="container-for-all-annotation-cards">
+              <div id="unique-block-id-12nknjn13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" href="#four!">
+            <div class="container-for-all-annotation-cards">
+              <div id="unique-block-id-121tyd3" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" href="#one!">
+            <div class="container-for-all-annotation-cards">
+              <div id="unique-block-id-12dcsde13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" href="#two!">
+            <div class="container-for-all-annotation-cards">
+              <div id="unique-block-id-1213" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" href="#three!">
+            <div class="container-for-all-annotation-cards">
+              <div id="unique-block-id-12245bk13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" href="#four!">
+            <div class="container-for-all-annotation-cards">
+              <div id="unique-block-id-xdz13" class="annotation-card-container interact-draggable">
+                <div class="row">
+                  <div class="col m12">
+                    <div class="card white hoverable">
+                     <div class="card-content">
+                       <p class="card-annotated-text">"I am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively."</p>
+                       <div class="text-annotation-dividing-line"></div>
+                       <p class="card-annotation">heheheheheghehheI am a very simple card. I am good at containing small bits of information.
+                       I am convenient because I require little markup to use effectively.</p>
+                       <div class="row annotation-meta-data-container">
+                         <div class="col m12">
+
+                           <span class="new badge left" data-badge-caption="#tag1"></span>
+                           <span class="new badge left" data-badge-caption="#another interesting tag"></span>
+                           <span class="new badge left" data-badge-caption="#this is my tag"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <span class="new badge left" data-badge-caption="#fame"></span>
+                           <span class="new badge left" data-badge-caption="#imagery"></span>
+                           <span class="new badge left" data-badge-caption="#color"></span>
+                           <div><i class="material-icons right annotation-more-information-icon">expand_more</i></div>
+
+                         </div>
+                       </div>
+                       <div class="row annotation-extra-info">
+                         <!--<div class="col offset-m1 offset-s1 m10 s10 text-annotation-dividing-line"></div>-->
+                         <div class="col m12 s12 annotation-document-name">Document Name: <span class="dynamic">This is the documents name</span></div>
+                         <div class="col m12 s12 annotation-document-author">Author: <span class="dynamic">Author of document</span></div>
+                         <div class="col m12 s12 annotation-document-data"><span class="dynamic">More data about the document</span></div>
+                         <div class="col m12 s12 annotation-group-name">Group: <span class="dynamic">Group Name 1</span></div>
+                         <div class="col m12 s12 annotation-creator-name">Annotated By: <span class="dynamic">Felix Hemsworth</span></div>
+                         <div class="col m12 s12 annotation-date-made">Made: <span class="dynamic">07/25/2005</span></div>
+                         <div class="col m12 s12 annotation-view-in-as"><span class="dynamic"><a href="#">View in Annotation Studios</a></span></div>
+                       </div>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+  <div id="idea-space-delete-container" class="idea-space-menu-options">
+    <div id="delete-idea-space-div">
+      <div class="row row-no-bottom-margin">
+        <div class="col m12 center">
+          <h4 id="deleted-idea-space-name">Deleting "Name of Idea Space"</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12 center">
+
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-red-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="delete-idea-space-confirmation">
+      <div class="row row-no-bottom-margin">
+        <div class="col m12 center">
+          <h4>Are you sure you want to delete "Name of Idea Space"?</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12 center">
+          <a id="btn-delete-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">delete</i>Delete</a>
+          <a id="btn-dont-delete-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancel</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div id="idea-space-share-container" class="idea-space-menu-options">
+    <div id="update-share-idea-space-div">
+      <div class="row row-no-bottom-margin">
+        <div class="col m12 center">
+          <h4 id="update-share-idea-space-name">Sharing "Name of Idea Space"</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12 center">
+
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-red-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="update-share-idea-space-confirmation">
+      <div class="row row-no-bottom-margin">
+        <div class="col m12">
+          <h4>Shared With...</h4>
+        </div>
+      </div>
+      <div class="row row-no-bottom-margin">
+        <div class="col m12">
+          <div class="chips .chips-autocomplete-share-idea-space"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12">
+          <a id="btn-share-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">sync</i>Update</a>
+          <a id="btn-dont-share-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancel</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="idea-space-rename-container" class="idea-space-menu-options">
+    <div id="rename-idea-space-div">
+      <div class="row row-no-bottom-margin">
+        <div class="col m12 center">
+          <h4 id="rename-idea-space-name">Renaming "Name of Idea Space"</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12 center">
+
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-red-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="rename-idea-space-confirmation">
+      <div class="row row-no-bottom-margin">
+        <div class="col m12">
+          <div class="input-field">
+            <input id="first_name" type="text" class="validate" value="Name Of Idea Space">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12">
+          <a id="btn-rename-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">edit</i>Rename</a>
+          <a id="btn-dont-rename-idea-space-confirmation" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancel</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

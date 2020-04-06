@@ -1,38 +1,18 @@
 {
-  "name": "dek_barebones_express_socketio_app",
-  "version": "0.0.0",
-  "description": "A barebones node express ejs application featuring bootstrap and socket.io.",
-  "keywords": [
-    "Node.js",
-    "Express",
-    "Bootstrap",
-    "Socket.io"
-  ],
-  "author": {
-    "name": "David Bow (Dekita)",
-    "email": "dekita@dekyde.com",
-    "url": "http://www.dekyde.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Dekita/barebones-express-ejs-socketio"
-  },
-  "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.0.0"
-  },
+  "name": "prototypeejs2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "dependencies": {
-    "ejs": "~2.4.2",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "intro.js": "^2.9.3",
-    "mongodb": "^3.5.5",
-    "socket.io": "~1.4.6"
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {},
-  "bundleDependencies": [],
-  "private": true,
   "scripts": {
-    "start": "node source/server/main.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "main": "source/server/main.js"
+  "author": "",
+  "license": "ISC"
 }
