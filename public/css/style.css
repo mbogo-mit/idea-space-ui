@@ -1,5 +1,18 @@
+/*
+#242582
+#553d67
+#f64c72
+#99738e
+#2f2fa2
+*/
+
+
 body {
   overflow-x: hidden;
+}
+
+#my-navbar {
+  background-color: #2f2fa2;
 }
 
 .annotation-extra-info div {
@@ -39,7 +52,7 @@ body {
   display: inline-block;
   transition: all 1.5s;
   position: absolute;
-  border-right: 1px dashed #424242;
+  border-right: 1px solid #242582;
 }
 
 #right-container {
@@ -251,7 +264,7 @@ body {
 .annotation-grouping-header {
   width: calc(100% - 20px);
   padding-left: 30px;
-  background-color: #009688;
+  background-color: #242582;
   padding-bottom: 8px;
   margin-left: 10px;
   transition: all 1s;
@@ -260,7 +273,7 @@ body {
 .outline-grouping-header {
   width: calc(100% - 20px);
   padding-left: 30px;
-  background-color: #009688;
+  background-color: #242582;
   padding-bottom: 8px;
   margin-left: 10px;
   transition: all 1s;
@@ -280,10 +293,14 @@ body {
 
 .annotation-grouping-body {
   overflow-y: hidden;
+  margin: 0px 10px;
+  background-color: #f5f5f5;
 }
 
 .outline-grouping-body {
   overflow-y: hidden;
+  margin: 0px 10px;
+  background-color: #f5f5f5;
 }
 
 .annotation-grouping-header .badge {
@@ -309,7 +326,8 @@ body {
 }
 
 .dropdown-content li>a, .dropdown-content li>span {
-  font-size: 10px !important;
+  font-size: 12px !important;
+  color: #242582;
 }
 
 .new-outline-badge {
@@ -321,6 +339,14 @@ body {
 
 .number-of-outlines-badge {
   margin-left: 10px !important;
+}
+
+#characters-left-badge-name {
+  background-color: #242582;
+}
+
+#characters-left-badge-description {
+  background-color: #242582;
 }
 
 #outlines-view-2 {
@@ -349,12 +375,14 @@ body {
   font-size: 10px;
   line-height: 30px;
   height: 30px;
+  background-color: #2f2fa2;
 }
 
 #btn-cancel-new-idea-space {
   font-size: 10px;
   line-height: 30px;
   height: 30px;
+  background-color: #2f2fa2;
 }
 
 #create-new-idea-space-card {
@@ -369,7 +397,31 @@ body {
 
 .btn-load-more-annotations {
   cursor: pointer;
+  color: #f64c72;
 }
+
+.progress {
+  background-color: #fcaebf !important;
+}
+
+.progress .indeterminate {
+  background-color: #f64c72 !important;
+}
+
+.spinner-blue, .spinner-blue-only {
+    border-color: #2f2fa2 !important;
+}
+
+[type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #f64c72;
+  border-bottom: 2px solid #f64c72;
+}
+
+/*
+.filtering-options-container span {
+  color: #242582;
+}
+*/
 
 #btn-change-size-of-container {
   position: relative;
@@ -379,7 +431,7 @@ body {
   z-index: 10;
   transform: rotate(90deg);
   background-color: white !important;
-  border: dashed 1px #424242;
+  border-bottom: solid 1px #242582;
   box-shadow: none;
 
 }
@@ -560,6 +612,7 @@ p {
 
 #add-new-idea-space {
   margin-top: 0px;
+  background-color: #f64c72;
 }
 
 #btn-create-new-outline {
@@ -596,10 +649,31 @@ p {
   height:75px;
 }
 
+.input-filter-checkbox-for-annotations {
+  background-color: #f64c72;
+  color: #f64c72;
+}
+
+.count-badge, .number-of-outlines-badge{
+  background-color: #f64c72 !important;
+}
+
+.tag-badge, .new-outline-badge{
+  background-color: #99738e !important;
+}
+
+#nav-mobile {
+  background-color: #2f2fa2;
+}
+
 #link-to-AS {
+  background-color: #f64c72;
+}
+
+#link-to-AS-a-tag {
   padding-left: 40px;
   padding-right: 40px;
-  background-color: #ee6e73;
+  background-color: #2f2fa2;
 }
 
 .idea-space-row {
@@ -879,6 +953,10 @@ p {
   overflow-y: hidden;
 }
 
+.ideaspace-menu-options {
+  background-color: #99738e !important;
+}
+
 #tooltip-create-ideaspace {
   padding: 0px !important;
   margin: 0px !important;
@@ -999,11 +1077,11 @@ p {
 
 #link-to-settings {
   padding: 0px 25px !important;
-  background-color: #ee6e73;
+  background-color: #2f2fa2;
 }
 
 #link-to-settings:hover {
-  background-color: rgb(214, 96, 100);
+  background-color: #242582;
 }
 
 #dropdown-settings > .collection > .collection-item > .material-icons {
@@ -1042,6 +1120,25 @@ if FAB is set to bottom
 #menu-action-btn li {
   margin-left: -15px !important;
 }
+
+#menu-action-btn a {
+  background-color: #f64c72 !important;
+}
+
+.collapsible-header {
+  transition: all 0.5s;
+}
+
+.collapsible-header:hover {
+  background-color: #2f2fa2 !important;
+  color: white !important;
+}
+
+.collapsible li.active .collapsible-header {
+  background-color: #2f2fa2 !important;
+  color: white !important;
+}
+
 /*
 end of css block
 */
@@ -1065,7 +1162,7 @@ end of css block
 }
 
 .pagination li.active {
-    background-color: #00897b !important;/* purple lighten-2 */
+    background-color: #242582 !important;/* purple lighten-2 */
 }
 
 .note-editor {
@@ -1327,10 +1424,19 @@ end of css block
 
 .show-less-text {
   display: none;
+  color: #2f2fa2
+}
+
+.show-more-text {
+  color: #2f2fa2
+}
+
+.view-in-annotation-studio-a-tag {
+  color: #f64c72;
 }
 
 .annotation-made-short-hand {
   float: right;
   padding-bottom: 5px;
-  color: #424242;
+  color: #242582;
 }

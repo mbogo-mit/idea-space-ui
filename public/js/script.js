@@ -220,12 +220,30 @@ $( document ).ready(function() {
     });
 
     $(".input-filter-checkbox-for-annotations").click(function(){
-      AddAdditionalFilterForAnnotations();
-      //styling updating filters notification
-      $("#updating-fitler-for-annotations").css("display","block");
-      $("#annotations-body").css("display","none");
+      if($(this).prop("checked")){
+        AddAdditionalFilterForAnnotations();
+        //making the text dark blue because the filter is selected
+        $(this).next().css("color","#242582");
+        //console.log($(this).next());
+      }
+      else{
+        //making the text grey because the filter is not selected
+        $(this).next().css("color","#9e9e9e");
+      }
+
+      UpdateFiltersForAnnotations();
+
     });
     $(".input-filter-checkbox-for-idea-space").click(function(){
+      if($(this).prop("checked")){
+        //making the text dark blue because the filter is selected
+        $(this).next().css("color","#242582");
+      }
+      else{
+        //making the text grey because the filter is not selected
+        $(this).next().css("color","#9e9e9e");
+      }
+
       UpdateFiltersForIdeaSpace();
     });
 
@@ -852,9 +870,9 @@ $( document ).ready(function() {
     });
 
     $(".annotation-grouping-header").hover(function(){
-      $(this).css('background-color','#1de9b6');
+      $(this).css('background-color','#5151c4');
     },function(){
-      $(this).css('background-color','#009688');
+      $(this).css('background-color','#242582');
     });
 
     $(".outline-grouping-header").click(function(){
@@ -881,9 +899,9 @@ $( document ).ready(function() {
     });
 
     $(".outline-grouping-header").hover(function(){
-      $(this).css('background-color','#1de9b6');
+      $(this).css('background-color','#5151c4');
     },function(){
-      $(this).css('background-color','#009688');
+      $(this).css('background-color','#242582');
     });
 
 

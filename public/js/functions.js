@@ -80,7 +80,7 @@ function ShouldWeCloseSlaveMaterialNote(event){
             PutBoundaryOnBlockHeaderMaterialNote($(this));
           });
           */
-          
+
         }
       });
 
@@ -266,7 +266,9 @@ function AddAdditionalFilterForAnnotations(){
 }
 
 function UpdateFiltersForAnnotations(){
-
+  //styling updating filters notification
+  $("#updating-fitler-for-annotations").css("display","block");
+  $("#annotations-body").css("display","none");
 }
 
 function UpdateFiltersForIdeaSpace(){
@@ -352,7 +354,7 @@ function CreateNewIdeaSpace(n = 'Idea Space Name', d = 'This is a quick descript
   var start = '<div class="row my-row"><div class="col m12"><div id="' +  uniqueID + '" class="card white hoverable choose-idea-space choose-idea-space-type-1"><div class="card-content black-text"><div class="card-content-time">Updated Now</div>';
   var name = '<div><span class="card-title">' + n + '</span></div>';
   var description = '<div class="card-description">' + d + '</div>';
-  var end = '<div class="drag-annotation-box valign-wrapper"><div class="drag-annotation-text center">Drop Annotation Here</div></div><div class="drag-annotation-meta-data"><span class="new badge" data-badge-caption="Annotations">0</span></div></div></div></div></div>';
+  var end = '<div class="drag-annotation-box valign-wrapper"><div class="drag-annotation-text center">Drop Annotation Here</div></div><div class="drag-annotation-meta-data"><span class="new badge count-badge" data-badge-caption="Annotations">0</span></div></div></div></div></div>';
   var html = start + name + description + end;
 
   $(html).insertAfter("#create-new-idea-space-box");
@@ -651,15 +653,15 @@ function DefaultAnnotationDropBox(el){
 }
 
 function ReadyAnnotationDropBox(el){
-  el.children().css("color","#4db6ac");
-  el.css("border","3px dashed #4db6ac");
+  el.children().css("color","#f64c72");
+  el.css("border","3px dashed #f64c72");
   el.addClass("ready-to-recieve-annotation");
 }
 
 function RecievedAnnotationDropBox(el){
-  el.children().css("color","#64b5f6");
-  el.children().html("Annotation Added<i class='material-icons' style='position:relative;top:5px;'>check</i>");
-  el.css("border","3px dashed #64b5f6");
+  el.children().css("color","#2f2fa2");
+  el.children().html("Annotation Added<i class='material-icons' style='position:relative;top:5px;left:5px;'>check</i>");
+  el.css("border","3px dashed #2f2fa2");
 }
 
 function AnimateDropingAnnotationIntoIdeaSpace(el){
