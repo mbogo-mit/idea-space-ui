@@ -203,11 +203,11 @@ $( document ).ready(function() {
     $("#link-to-settings").click(function(){
       if(DropdownSettingOpen){
         $("#dropdown-settings").css("display","none");
-        $(this).css("background-color","#ee6e73");
+        $(this).css("background-color","#2f2fa2");
         DropdownSettingOpen = false;
       }else{
         $("#dropdown-settings").css("display","block");
-        $(this).css("background-color","rgb(214, 96, 100)");
+        $(this).css("background-color","#242582");
         DropdownSettingOpen = true;
 
       }
@@ -409,12 +409,12 @@ $( document ).ready(function() {
         wrapper.removeClass('open');
         wrapper.height(0);
         dividerLine.width('0%');
-        console.log(wrapper.height());
+        //console.log(wrapper.height());
       } else {
         wrapper.addClass('open');
         dividerLine.width('90%');
         wrapper.height(list.outerHeight(true));
-        console.log(wrapper.height());
+        //console.log(wrapper.height());
       }
 
     });
@@ -693,7 +693,7 @@ $( document ).ready(function() {
     $("#annotation-results-ul > li").click(function(){
       if(!$(this).hasClass("active")){
         if($(this).attr("id") == "chevron-left-pagination"){
-          console.log("left chevron clicked");
+          //console.log("left chevron clicked");
           //clicking on prev page button
           if(!($(this).hasClass("disabled"))){
             //if the button is not disabled then do something, otherwise don't do anything
@@ -713,7 +713,7 @@ $( document ).ready(function() {
           }
         }
         else if($(this).attr("id") == "chevron-right-pagination"){
-          console.log("right chevron clicked");
+          //console.log("right chevron clicked");
           //clicking onf next page button
           if(!($(this).hasClass("disabled"))){
             //if the button is not disabled then do something, otherwise don't do anything
@@ -725,7 +725,7 @@ $( document ).ready(function() {
             $("#chevron-left-pagination").removeClass("disabled");
 
             if(CURRENTPAGENUMBER == LASTPAGENUMBER){
-              console.log("disabled right chevron");
+              //console.log("disabled right chevron");
               //if page number is equal to last page number than we cannot paginate right anymore so we must disable the button
               $("#chevron-right-pagination").addClass("disabled");
             }
@@ -852,23 +852,26 @@ $( document ).ready(function() {
     });
 
     $(".annotation-grouping-header").click(function(){
+      //$(".annotation-grouping-body").height($(".annotation-grouping-body").height());
       if($(this).children().children().html() == "expand_more"){
-        $(this).next().css("transition","none");
+        //$(this).next().css("transition","none");
         $(this).next().css("height","auto");
         var h = $(this).next().height();
-        console.log(h);
         $(this).next().css("height","0px");
         $(this).next().animate({
           height: h + "px"
         }, 1000, function() {
           // Animation complete.
-          $(this).next().css("height","100%");
+          $(this).css("height","100%");
         });
         $(this).children().children().html("expand_less");
       }
       else{
-        $(this).next().css("transition","all 1s");
-        $(this).next().css("height","0px");
+        //$(this).next().css("transition","all 1s");
+        $(this).next().animate({
+          height: "0px"
+        },1000);
+
         $(this).children().children().html("expand_more");
       }
     });
@@ -876,28 +879,31 @@ $( document ).ready(function() {
     $(".annotation-grouping-header").hover(function(){
       $(this).css('background-color','#5151c4');
     },function(){
-      $(this).css('background-color','#242582');
+      $(this).css('background-color','#2f2fa2');
     });
 
     $(".outline-grouping-header").click(function(){
+      //$(".outline-grouping-body").height($(".outline-grouping-body").height());
       if($(this).children().children().html() == "expand_more"){
         $(this).next().css("transition","none");
-        $(this).next().css("height","auto");
+        $(this).next().css("height","100%");
         var h = $(this).next().height();
-        console.log(h);
+        //console.log(h);
         $(this).next().css("height","0px");
         $(this).next().animate({
           height: h + "px"
         }, 1000, function() {
           // Animation complete.
+          $(this).css("height","auto");
         });
         //$(this).next().css("transition","all 1s");
         //$(this).next().css("height", h + "px");
         $(this).children().children().html("expand_less");
       }
       else{
-        $(this).next().css("transition","all 1s");
-        $(this).next().css("height","0px");
+        $(this).next().animate({
+          height: "0px"
+        },1000);
         $(this).children().children().html("expand_more");
       }
     });
@@ -956,8 +962,8 @@ $( document ).ready(function() {
       $(this).css("background-color","teal");
     });
 
-    $(".annotation-grouping-body").height($(".annotation-grouping-body").height());
-    $(".outline-grouping-body").height($(".outline-grouping-body").height());
+    //$(".annotation-grouping-body").height($(".annotation-grouping-body").height());
+    //$(".outline-grouping-body").height($(".outline-grouping-body").height());
 
 
     $("#btn-change-size-of-container").click(function(){
@@ -1039,7 +1045,6 @@ $( document ).ready(function() {
 
     });
     $("#btn-return-to-idea-spaces").click(function(){
-      console.log('hi');
       IDEASPACESOPEN = true;
       LeftPanelExpanded = true;
 
@@ -1134,7 +1139,7 @@ $( document ).ready(function() {
 
   function InitInteractJsEventListeners(){
     $(".interact-draggable").each(function(){
-      console.log($(this)[0].id);
+      //console.log($(this)[0].id);
       InitBlockIdPosition($(this)[0].id);
     });
 

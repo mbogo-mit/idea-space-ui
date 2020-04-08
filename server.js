@@ -2,6 +2,11 @@
 var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
+
+var ISDB = require('/db_scripts/functions.js');
+console.log(ISDB.client);
+
+
 var io = require('socket.io')(http);
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -13,7 +18,7 @@ app.set('view engine', 'ejs');
 
 // use res.render to load up an ejs view file
 
-app.use(express.static(__dirname + '/public/'));
+app.use(express.static(__dirname + '/'));
 
 // index page
 app.get('/', function(req, res) {

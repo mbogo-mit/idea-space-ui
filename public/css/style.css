@@ -92,6 +92,10 @@ body {
   overflow-y: scroll;
 }
 
+.collection-item {
+  color: #2f2fa2 !important;
+}
+
 #ideaspaces {
   position: absolute;
   width: 100%;
@@ -102,7 +106,7 @@ body {
   transition: all 1s;
   z-index: 1;
   padding: 0px 10px 20px 10px;
-  margin-top: -20px;
+  margin-top: -70px;
 }
 
 #ideaspace {
@@ -267,7 +271,7 @@ body {
 .annotation-grouping-header {
   width: calc(100% - 20px);
   padding-left: 30px;
-  background-color: #242582;
+  background-color: #2f2fa2;
   padding-bottom: 8px;
   margin-left: 10px;
   transition: all 1s;
@@ -1513,4 +1517,8 @@ end of css block
 }
 #by-date-filter-container-organizer .meta-data-chips {
   border-bottom: solid 2px #ffea4f;
+}
+
+.annotation-already-exists-in-ideaspace-container {
+  display: none;
 }
